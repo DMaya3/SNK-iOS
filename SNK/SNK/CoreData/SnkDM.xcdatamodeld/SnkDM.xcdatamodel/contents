@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Characters" representedClassName="Characters" parentEntity="Root" syncable="YES">
+        <attribute name="age" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="alias" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="birthplace" optional="YES" attributeType="String"/>
+        <attribute name="episodes" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="groups" optional="YES" attributeType="Transformable" valueTransformerName="GroupsArrayTransformer" customClassName="[Groups]"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="occupation" optional="YES" attributeType="String"/>
+        <attribute name="relatives" optional="YES" attributeType="Transformable" valueTransformerName="RelativesArrayTransformer" customClassName="[Relatives]"/>
+        <attribute name="residence" optional="YES" attributeType="String"/>
+        <attribute name="roles" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="species" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="characters" inverseEntity="Root"/>
+    </entity>
+    <entity name="Episodes" representedClassName="Episodes" parentEntity="RootEpisodes" syncable="YES">
+        <attribute name="characters" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <attribute name="episode" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="img" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="rootEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootEpisodes" inverseName="relationEpisodes" inverseEntity="RootEpisodes"/>
+    </entity>
+    <entity name="Groups" representedClassName="Groups" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sub_groups" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+    </entity>
+    <entity name="Information" representedClassName="Information" syncable="YES">
+        <attribute name="count" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="next_page" optional="YES" attributeType="String"/>
+        <attribute name="pages" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="prev_page" optional="YES" attributeType="String"/>
+        <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="information" inverseEntity="Root"/>
+        <relationship name="rootEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootEpisodes" inverseName="informationEpisodes" inverseEntity="RootEpisodes"/>
+    </entity>
+    <entity name="Relatives" representedClassName="Relatives" syncable="YES">
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="members" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+    </entity>
+    <entity name="Root" representedClassName="Root" syncable="YES">
+        <attribute name="info" optional="YES" attributeType="Transformable" valueTransformerName="InformationTransformer" customClassName="Information"/>
+        <attribute name="results" optional="YES" attributeType="Transformable" valueTransformerName="CharactersArrayTransformer" customClassName="[Characters]"/>
+        <relationship name="characters" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Characters" inverseName="root" inverseEntity="Characters"/>
+        <relationship name="information" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Information" inverseName="root" inverseEntity="Information"/>
+    </entity>
+    <entity name="RootEpisodes" representedClassName="RootEpisodes" syncable="YES">
+        <attribute name="info" optional="YES" attributeType="Transformable" valueTransformerName="InformationTransformer" customClassName="Information"/>
+        <attribute name="results" optional="YES" attributeType="Transformable" valueTransformerName="EpisodesArrayTransformer" customClassName="[Episodes]"/>
+        <relationship name="informationEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Information" inverseName="rootEpisodes" inverseEntity="Information"/>
+        <relationship name="relationEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Episodes" inverseName="rootEpisodes" inverseEntity="Episodes"/>
+    </entity>
+</model>
