@@ -98,24 +98,26 @@ struct HomeView: View {
                                 WebView(url: url)
                             }
                         }
+                        .toolbar {
+                            ToolbarItem(placement: .principal) {
+                                Image(.wingsOfFreedom)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 50, height: 50)
+                                    .padding()
+                            }
+                            
+                            ToolbarItem(placement: .topBarTrailing) {
+                                Image(systemName: "list.bullet")
+                                    .imageScale(.large)
+                                    .tint(self.colorByColorScheme)
+                            }
+                        }
                     }
                 }
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Image(.wingsOfFreedom)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                Image(systemName: "list.bullet")
-                    .imageScale(.large)
-                    .tint(self.colorByColorScheme)
-            }
-        }
+        
     }
 }
 
