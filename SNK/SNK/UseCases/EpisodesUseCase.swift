@@ -6,7 +6,6 @@
 //
 
 import Combine
-import Foundation
 
 protocol EpisodesUseCase {
     func fetchDataEpisodes(pages: Int) async -> AnyPublisher<RootEpisodes, Error>
