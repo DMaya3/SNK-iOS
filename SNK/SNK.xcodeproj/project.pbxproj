@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBCAF3EB2CEF27E00004AB37 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */; };
 		BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EC2CEF28520004AB37 /* APICall.swift */; };
 		BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
 		BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		BBCAF3EC2CEF28520004AB37 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BBA8B0F42CEF8C7C00F3F506 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BBCAF3E92CEF27C80004AB37 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 				BBCAF3F22CEF39F30004AB37 /* UseCases */,
 				BBE6A9B42CEE7A130006E7CC /* Utils */,
 				BBE6A95C2CEE72680006E7CC /* Preview Content */,
+				BBA8B0F42CEF8C7C00F3F506 /* ViewModel */,
 				BBE6A95D2CEE72680006E7CC /* Assets.xcassets */,
 				BBE6A95E2CEE72680006E7CC /* ContentView.swift */,
 				BBE6A95F2CEE72680006E7CC /* SNKApp.swift */,
@@ -288,6 +299,7 @@
 				BBCAF3F42CEF3A090004AB37 /* EpisodesUseCase.swift in Sources */,
 				BBE6A9A92CEE789F0006E7CC /* Groups+Transfomer.swift in Sources */,
 				BBE6A9972CEE77EB0006E7CC /* Characters+CoreDataClass.swift in Sources */,
+				BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */,
 				BBE6A9982CEE77EB0006E7CC /* Characters+CoreDataProperties.swift in Sources */,
 				BBE6A9B62CEE7A1B0006E7CC /* Errors.swift in Sources */,
 				BBE6A9A72CEE786E0006E7CC /* Episodes+Transformer.swift in Sources */,
