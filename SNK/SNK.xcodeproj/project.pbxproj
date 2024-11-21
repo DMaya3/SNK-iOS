@@ -10,6 +10,7 @@
 		BBCAF3EB2CEF27E00004AB37 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */; };
 		BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EC2CEF28520004AB37 /* APICall.swift */; };
 		BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */; };
+		BBCAF3F12CEF2DDC0004AB37 /* SNKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */; };
 		BBE6A9612CEE72680006E7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95E2CEE72680006E7CC /* ContentView.swift */; };
 		BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95F2CEE72680006E7CC /* SNKApp.swift */; };
 		BBE6A9632CEE72680006E7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		BBCAF3EC2CEF28520004AB37 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
+		BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKRepository.swift; sourceTree = "<group>"; };
 		BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBE6A95D2CEE72680006E7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE6A95E2CEE72680006E7CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		BBCAF3E92CEF27C80004AB37 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */,
 				BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */,
 			);
 			path = Repositories;
@@ -289,6 +292,7 @@
 				BBE6A9BC2CEE7AB00006E7CC /* Root+CoreDataProperties.swift in Sources */,
 				BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */,
 				BBE6A9A02CEE77EB0006E7CC /* Relatives+CoreDataProperties.swift in Sources */,
+				BBCAF3F12CEF2DDC0004AB37 /* SNKRepository.swift in Sources */,
 				BBE6A9A32CEE77EB0006E7CC /* RootEpisodes+CoreDataClass.swift in Sources */,
 				BBE6A9A42CEE77EB0006E7CC /* RootEpisodes+CoreDataProperties.swift in Sources */,
 				BBE6A9612CEE72680006E7CC /* ContentView.swift in Sources */,
