@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
+		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
+		BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */; };
 		BBCAF3EB2CEF27E00004AB37 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */; };
 		BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EC2CEF28520004AB37 /* APICall.swift */; };
 		BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */; };
 		BBCAF3F12CEF2DDC0004AB37 /* SNKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */; };
 		BBCAF3F42CEF3A090004AB37 /* EpisodesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F32CEF3A040004AB37 /* EpisodesUseCase.swift */; };
 		BBCAF3F62CEF3A780004AB37 /* CharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F52CEF3A740004AB37 /* CharactersUseCase.swift */; };
-		BBE6A9612CEE72680006E7CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95E2CEE72680006E7CC /* ContentView.swift */; };
+		BBE6A9612CEE72680006E7CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95E2CEE72680006E7CC /* HomeView.swift */; };
 		BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95F2CEE72680006E7CC /* SNKApp.swift */; };
 		BBE6A9632CEE72680006E7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */; };
 		BBE6A9642CEE72680006E7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95D2CEE72680006E7CC /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
+		BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSectionView.swift; sourceTree = "<group>"; };
+		BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		BBCAF3EC2CEF28520004AB37 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		BBCAF3F52CEF3A740004AB37 /* CharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersUseCase.swift; sourceTree = "<group>"; };
 		BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBE6A95D2CEE72680006E7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BBE6A95E2CEE72680006E7CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBE6A95E2CEE72680006E7CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBE6A95F2CEE72680006E7CC /* SNKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKApp.swift; sourceTree = "<group>"; };
 		BBE6A96A2CEE72E10006E7CC /* SnkDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnkDM.xcdatamodel; sourceTree = "<group>"; };
 		BBE6A9892CEE77EB0006E7CC /* Characters+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characters+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -116,6 +120,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BBA8B0F72CEFB2EF00F3F506 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBA8B0FB2CEFB64600F3F506 /* Screens */,
+				BBA8B0F82CEFB2FC00F3F506 /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBA8B0F82CEFB2FC00F3F506 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */,
+				BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BBA8B0FB2CEFB64600F3F506 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BBE6A95E2CEE72680006E7CC /* HomeView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		BBCAF3E92CEF27C80004AB37 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,9 +180,9 @@
 				BBCAF3F22CEF39F30004AB37 /* UseCases */,
 				BBE6A9B42CEE7A130006E7CC /* Utils */,
 				BBE6A95C2CEE72680006E7CC /* Preview Content */,
+				BBA8B0F72CEFB2EF00F3F506 /* View */,
 				BBA8B0F42CEF8C7C00F3F506 /* ViewModel */,
 				BBE6A95D2CEE72680006E7CC /* Assets.xcassets */,
-				BBE6A95E2CEE72680006E7CC /* ContentView.swift */,
 				BBE6A95F2CEE72680006E7CC /* SNKApp.swift */,
 			);
 			path = SNK;
@@ -305,6 +335,7 @@
 				BBE6A9A72CEE786E0006E7CC /* Episodes+Transformer.swift in Sources */,
 				BBCAF3EB2CEF27E00004AB37 /* WebRepository.swift in Sources */,
 				BBE6A9992CEE77EB0006E7CC /* Episodes+CoreDataClass.swift in Sources */,
+				BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */,
 				BBE6A99A2CEE77EB0006E7CC /* Episodes+CoreDataProperties.swift in Sources */,
 				BBE6A9AB2CEE78BB0006E7CC /* Relatives+Transformer.swift in Sources */,
 				BBE6A99B2CEE77EB0006E7CC /* Groups+CoreDataClass.swift in Sources */,
@@ -312,6 +343,7 @@
 				BBE6A99C2CEE77EB0006E7CC /* Groups+CoreDataProperties.swift in Sources */,
 				BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */,
 				BBE6A9B82CEE7A560006E7CC /* Helpers.swift in Sources */,
+				BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */,
 				BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */,
 				BBE6A9B32CEE79280006E7CC /* CoreDataProvider.swift in Sources */,
 				BBE6A99F2CEE77EB0006E7CC /* Relatives+CoreDataClass.swift in Sources */,
@@ -323,7 +355,7 @@
 				BBCAF3F12CEF2DDC0004AB37 /* SNKRepository.swift in Sources */,
 				BBE6A9A32CEE77EB0006E7CC /* RootEpisodes+CoreDataClass.swift in Sources */,
 				BBE6A9A42CEE77EB0006E7CC /* RootEpisodes+CoreDataProperties.swift in Sources */,
-				BBE6A9612CEE72680006E7CC /* ContentView.swift in Sources */,
+				BBE6A9612CEE72680006E7CC /* HomeView.swift in Sources */,
 				BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */,
 				BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */,
 			);
