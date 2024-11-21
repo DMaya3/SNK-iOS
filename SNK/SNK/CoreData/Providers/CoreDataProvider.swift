@@ -31,7 +31,7 @@ class CoreDataProvider {
     }()
     
     init(inMemory: Bool = false) {
-        self.persistentContainer = NSPersistentContainer(name: "ShingekiDM")
+        self.persistentContainer = NSPersistentContainer(name: "SnkDM")
         
         if inMemory {
             self.persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")

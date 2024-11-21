@@ -16,9 +16,12 @@ struct SNKApp: App {
         ValueTransformer.setValueTransformer(InformationTransformer(), forName: NSValueTransformerName("InformationTransformer"))
         ValueTransformer.setValueTransformer(RelativesArrayTransformer(), forName: NSValueTransformerName("RelativesArrayTransformer"))
     }
+    @StateObject private var viewModel = SNKViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environment(\.managedObjectContext, CoreDataProvider.preview.context)
+                .environmentObject(self.viewModel)
         }
     }
 }
