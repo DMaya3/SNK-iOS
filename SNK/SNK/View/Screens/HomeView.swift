@@ -14,7 +14,7 @@ struct HomeView: View {
     @EnvironmentObject private var viewModel: SNKViewModel
     @Namespace private var nameSpace
     @State private var showWebView: Bool = false
-    private var localization: Localization = DefaultLocalization()
+    @State private var isMenuOpen: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -109,11 +109,44 @@ struct HomeView: View {
                             }
                             
                             ToolbarItem(placement: .topBarTrailing) {
-                                Image(systemName: "list.bullet")
-                                    .imageScale(.large)
-                                    .tint(self.colorByColorScheme)
+                                Button(action: {
+                                    withAnimation {
+                                        self.isMenuOpen.toggle()
+                                    }
+                                }, label: {
+                                    Image(systemName: "list.bullet")
+                                        .imageScale(.large)
+                                        .tint(self.colorByColorScheme)
+                                })
+                                .padding()
                             }
                         }
+                    }
+                    .disabled(self.isMenuOpen)
+                    .blur(radius: self.isMenuOpen ? 3 : 0)
+                    if self.isMenuOpen {
+                        HStack {
+                            MenuView(isMenuOpen: $isMenuOpen,
+                                     characters: Array(self.characters),
+                                     episodes: Array(self.episodes))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .transition(.move(edge: .trailing))
+                    }
+                }
+                .gesture(
+                    DragGesture()
+                        .onEnded { value in
+                            if value.translation.width < -100 {
+                                withAnimation {
+                                    self.isMenuOpen = false
+                                }
+                            }
+                        }
+                )
+                .onTapGesture {
+                    withAnimation {
+                        self.isMenuOpen = false
                     }
                 }
             }
@@ -131,7 +164,11 @@ struct HomeView: View {
 }
 
 extension HomeView {
-    var colorByColorScheme: Color {
+    private var colorByColorScheme: Color {
         self.colorScheme == .dark ? .white : .black
+    }
+    
+    private var localization: Localization {
+        DefaultLocalization()
     }
 }
