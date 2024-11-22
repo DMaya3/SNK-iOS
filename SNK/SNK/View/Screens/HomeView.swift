@@ -14,7 +14,8 @@ struct HomeView: View {
     @EnvironmentObject private var viewModel: SNKViewModel
     @Namespace private var nameSpace
     @State private var showWebView: Bool = false
-    
+    private var localization: Localization = DefaultLocalization()
+
     var body: some View {
         NavigationStack {
             if self.characters.count < 20 && self.episodes.count < 20 {
@@ -23,20 +24,20 @@ struct HomeView: View {
                 ZStack {
                     VStack {
                         ScrollView {
-                            Text("Welcome to Shingeki No Kyojin App!")
+                            Text(self.localization.title_home_view)
                                 .font(.title3)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(alignment: .center)
                             
-                            Text("You´ll watch all about Attack On Titan. From characters to a list of episodes and more information. You´ll can watch all their information in detail like residence, age, specie, etc. Enjoy it!")
+                            Text(self.localization.description_home_view)
                                 .font(.subheadline)
                                 .foregroundStyle(self.colorByColorScheme)
                                 .multilineTextAlignment(.leading)
                                 .frame(width: UIScreen.main.bounds.width - 60)
                                 .padding()
                             
-                            Text("What do you want to watch first?")
+                            Text(self.localization.title_sections_home_view)
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(self.colorByColorScheme)
@@ -51,10 +52,10 @@ struct HomeView: View {
                                 }
                             } label: {
                                 if #available(iOS 18.0, *) {
-                                    CardSectionView(titleSection: "Characters", characters: Array(self.characters))
+                                    CardSectionView(titleSection: self.localization.title_section_characters_home_view, characters: Array(self.characters))
                                         .matchedTransitionSource(id: "CharactersList", in: nameSpace)
                                 } else {
-                                    CardSectionView(titleSection: "Characters", characters: Array(self.characters))
+                                    CardSectionView(titleSection: self.localization.title_section_characters_home_view, characters: Array(self.characters))
                                 }
                             }
                             
@@ -67,14 +68,14 @@ struct HomeView: View {
                                 }
                             } label: {
                                 if #available(iOS 18.0, *) {
-                                    CardSectionView(titleSection: "Episodes", episodes: Array(self.episodes))
+                                    CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
                                         .matchedTransitionSource(id: "CharactersList", in: nameSpace)
                                 } else {
-                                    CardSectionView(titleSection: "Episodes", episodes: Array(self.episodes))
+                                    CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
                                 }
                             }
                             
-                            Text("If you want to know more about the manga/anime tap the link down below!")
+                            Text(self.localization.text_more_info_home_view)
                                 .font(.subheadline)
                                 .foregroundStyle(self.colorByColorScheme)
                                 .multilineTextAlignment(.center)
@@ -84,7 +85,7 @@ struct HomeView: View {
                                                     bottom: 10,
                                                     trailing: 25))
                             
-                            Text("Learn more about Shingeki No Kyojin")
+                            Text(self.localization.link_more_info_home_view)
                                 .font(.footnote)
                                 .foregroundStyle(.blue)
                                 .onTapGesture {

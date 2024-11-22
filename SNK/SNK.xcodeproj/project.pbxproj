@@ -10,6 +10,8 @@
 		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
 		BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */; };
+		BBAD920F2CF0927A0040FC01 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BBAD920E2CF0927A0040FC01 /* Localizable.xcstrings */; };
+		BBAD92112CF095140040FC01 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD92102CF095100040FC01 /* Localization.swift */; };
 		BBCAF3EB2CEF27E00004AB37 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */; };
 		BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EC2CEF28520004AB37 /* APICall.swift */; };
 		BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */; };
@@ -50,6 +52,8 @@
 		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
 		BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSectionView.swift; sourceTree = "<group>"; };
 		BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		BBAD920E2CF0927A0040FC01 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BBAD92102CF095100040FC01 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		BBCAF3EA2CEF27DA0004AB37 /* WebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; };
 		BBCAF3EC2CEF28520004AB37 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingHelpers.swift; sourceTree = "<group>"; };
@@ -146,6 +150,15 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		BBAD920D2CF091930040FC01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBAD92102CF095100040FC01 /* Localization.swift */,
+				BBAD920E2CF0927A0040FC01 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BBCAF3E92CEF27C80004AB37 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +190,7 @@
 			children = (
 				BBE6A9652CEE726F0006E7CC /* CoreData */,
 				BBCAF3E92CEF27C80004AB37 /* Repositories */,
+				BBAD920D2CF091930040FC01 /* Resources */,
 				BBCAF3F22CEF39F30004AB37 /* UseCases */,
 				BBE6A9B42CEE7A130006E7CC /* Utils */,
 				BBE6A95C2CEE72680006E7CC /* Preview Content */,
@@ -294,6 +308,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = BBA53FA52CEE5C26005172E9;
 			minimizedProjectReferenceProxies = 1;
@@ -314,6 +329,7 @@
 			files = (
 				BBE6A9632CEE72680006E7CC /* Preview Assets.xcassets in Resources */,
 				BBE6A9642CEE72680006E7CC /* Assets.xcassets in Resources */,
+				BBAD920F2CF0927A0040FC01 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +356,7 @@
 				BBE6A9AB2CEE78BB0006E7CC /* Relatives+Transformer.swift in Sources */,
 				BBE6A99B2CEE77EB0006E7CC /* Groups+CoreDataClass.swift in Sources */,
 				BBE6A9AD2CEE78DB0006E7CC /* Characters+Transformer.swift in Sources */,
+				BBAD92112CF095140040FC01 /* Localization.swift in Sources */,
 				BBE6A99C2CEE77EB0006E7CC /* Groups+CoreDataProperties.swift in Sources */,
 				BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */,
 				BBE6A9B82CEE7A560006E7CC /* Helpers.swift in Sources */,
@@ -423,6 +440,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -479,6 +497,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
