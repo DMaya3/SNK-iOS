@@ -37,7 +37,4 @@ The link at the end of the screen open a sheet displaying a webview (https://att
 
 ### Home View Screenshot
 
-https://github.com/user-attachments/assets/c0a1bf9e-c802-41e2-b11d-4f80cd9925bb
-
-
-
+https://github.com/user-attachments/assets/1a80ac03-4df1-4ba8-bc3b-ac3eddfe20f0
