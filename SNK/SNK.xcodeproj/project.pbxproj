@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
 		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
 		BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
 		BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSectionView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		BBA8B0F82CEFB2FC00F3F506 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BB7727332CF0CE8C00F64777 /* LoadingView.swift */,
 				BBAD92122CF09A400040FC01 /* MenuView.swift */,
 				BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */,
 				BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */,
@@ -348,6 +351,7 @@
 				BBCAF3F42CEF3A090004AB37 /* EpisodesUseCase.swift in Sources */,
 				BBE6A9A92CEE789F0006E7CC /* Groups+Transfomer.swift in Sources */,
 				BBE6A9972CEE77EB0006E7CC /* Characters+CoreDataClass.swift in Sources */,
+				BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */,
 				BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */,
 				BBE6A9982CEE77EB0006E7CC /* Characters+CoreDataProperties.swift in Sources */,
 				BBE6A9B62CEE7A1B0006E7CC /* Errors.swift in Sources */,

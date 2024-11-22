@@ -19,7 +19,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             if self.characters.count < 20 && self.episodes.count < 20 {
-                //LoadingView()
+                LoadingView()
             } else {
                 ZStack {
                     VStack {
