@@ -7,10 +7,63 @@
 
 import Foundation
 
+enum Language: String, CaseIterable, Identifiable {
+    case english = "en"
+    case spanish = "es"
+    
+    var id: String { self.rawValue }
+    
+    var displayName: String {
+        switch self {
+        case .english:
+            return "English"
+        case .spanish:
+            return "Spanish"
+        }
+    }
+}
+
+enum Status: String, CaseIterable, Identifiable {
+    var id: Self {
+        self
+    }
+    case alive = "Alive"
+    case deceased = "Deceased"
+    case unknown = "Unknown"
+    case none
+}
+
+enum Species: String {
+    case human = "Human"
+    case intelligentTItan = "Intelligent Titan"
+    case titanFormerlyHuman = "Titan (formerly human)"
+}
+
 protocol ArrayConvertible {
     var id: Int64 { get }
     var name: String? { get }
     var img: Data? { get }
+}
+
+protocol Helpers {
+    func getArrayObjectById(stringArray: [String], objectArray: [ArrayConvertible]) -> [ArrayConvertible]
+}
+
+struct DefaultHelpers: Helpers {
+    func getArrayObjectById(stringArray: [String], objectArray: [ArrayConvertible]) -> [ArrayConvertible] {
+        var newArrayObject: [ArrayConvertible] = []
+        for string in stringArray {
+            let components = string.split(separator: "/")
+            if let lastComponent = components.last {
+                objectArray.forEach { thisObject in
+                    if lastComponent == String(thisObject.id) {
+                        newArrayObject.append(thisObject)
+                    }
+                }
+            }
+        }
+        return newArrayObject
+    }
 }
 
 class LanguageSettings: ObservableObject {
@@ -51,30 +104,4 @@ extension Bundle {
         let bundle = objc_getAssociatedObject(Bundle.main, &bundleKey) as? Bundle ?? Bundle.main
         return bundle.localizedString(forKey: key, value: value, table: tableName)
     }
-}
-
-enum Language: String, CaseIterable, Identifiable {
-    case english = "en"
-    case spanish = "es"
-    
-    var id: String { self.rawValue }
-    
-    var displayName: String {
-        switch self {
-        case .english:
-            return "English"
-        case .spanish:
-            return "Spanish"
-        }
-    }
-}
-
-enum Status: String, CaseIterable, Identifiable {
-    var id: Self {
-        self
-    }
-    case alive = "Alive"
-    case deceased = "Deceased"
-    case unknown = "Unknown"
-    case none
 }
