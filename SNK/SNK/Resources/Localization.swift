@@ -34,6 +34,9 @@ protocol Localization {
     func cdv_section_family(family: String) -> String
     var cdv_section_roles: String { get }
     var cdv_section_episodes: String { get }
+    
+    func edv_season_title(number: String) -> String
+    func edv_episode_title(number: String, title: String) -> String
 }
 
 struct DefaultLocalization: Localization {
@@ -140,6 +143,17 @@ struct DefaultLocalization: Localization {
     
     var cdv_section_episodes: String {
         return self.customLocalizedString("cdv_section_episodes")
+    }
+    
+    // MARK: - Episode Detail View
+    func edv_season_title(number: String) -> String {
+        let format = self.customLocalizedString("edv_season_title")
+        return String(format: format, number)
+    }
+    
+    func edv_episode_title(number: String, title: String) -> String {
+        let format = self.customLocalizedString("edv_episode_title")
+        return String(format: format, number, title)
     }
 }
 

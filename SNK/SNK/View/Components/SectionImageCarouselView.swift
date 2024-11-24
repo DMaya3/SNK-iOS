@@ -45,7 +45,7 @@ struct SectionImageCarouselView: View {
                         if let charactersArray = self.newArray as? [Characters] {
                             CharacterDetailView(character: charactersArray[index], characters: self.characters, episodes: self.episodes)
                         } else if let episodesArray = self.newArray as? [Episodes] {
-                           // EpisodeDetailView(episode: episodesArray[index], characters: self.characters, episodes: self.episodes)
+                            EpisodeDetailView(episode: episodesArray[index], episodes: self.episodes, characters: self.characters)
                         }
                     } label: {
                         if let image = self.newArray[index].img, let name = self.newArray[index].name {

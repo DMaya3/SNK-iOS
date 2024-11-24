@@ -24,6 +24,7 @@
 		BBCAF3F12CEF2DDC0004AB37 /* SNKRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */; };
 		BBCAF3F42CEF3A090004AB37 /* EpisodesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F32CEF3A040004AB37 /* EpisodesUseCase.swift */; };
 		BBCAF3F62CEF3A780004AB37 /* CharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCAF3F52CEF3A740004AB37 /* CharactersUseCase.swift */; };
+		BBE39D4C2CF37CDE00B6F69B /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE39D4B2CF37CDA00B6F69B /* EpisodeDetailView.swift */; };
 		BBE6A9612CEE72680006E7CC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95E2CEE72680006E7CC /* HomeView.swift */; };
 		BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A95F2CEE72680006E7CC /* SNKApp.swift */; };
 		BBE6A9632CEE72680006E7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		BBCAF3F02CEF2DD90004AB37 /* SNKRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKRepository.swift; sourceTree = "<group>"; };
 		BBCAF3F32CEF3A040004AB37 /* EpisodesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesUseCase.swift; sourceTree = "<group>"; };
 		BBCAF3F52CEF3A740004AB37 /* CharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersUseCase.swift; sourceTree = "<group>"; };
+		BBE39D4B2CF37CDA00B6F69B /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
 		BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BBE6A95D2CEE72680006E7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBE6A95E2CEE72680006E7CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		BBB273122CF34AEE00DBFC21 /* EpisodesScreens */ = {
 			isa = PBXGroup;
 			children = (
+				BBE39D4B2CF37CDA00B6F69B /* EpisodeDetailView.swift */,
 				BBB273132CF34B0400DBFC21 /* EpisodesListView.swift */,
 			);
 			path = EpisodesScreens;
@@ -421,6 +424,7 @@
 				BBE6A9A32CEE77EB0006E7CC /* RootEpisodes+CoreDataClass.swift in Sources */,
 				BBE6A9A42CEE77EB0006E7CC /* RootEpisodes+CoreDataProperties.swift in Sources */,
 				BBE6A9612CEE72680006E7CC /* HomeView.swift in Sources */,
+				BBE39D4C2CF37CDE00B6F69B /* EpisodeDetailView.swift in Sources */,
 				BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */,
 				BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */,
 			);
