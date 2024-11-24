@@ -99,6 +99,7 @@ struct HomeView: View {
                                 WebView(url: url)
                             }
                         }
+                        .navigationBarBackButtonHidden()
                         .toolbar {
                             ToolbarItem(placement: .principal) {
                                 Image(.wingsOfFreedom)
