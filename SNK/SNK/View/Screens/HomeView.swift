@@ -61,10 +61,10 @@ struct HomeView: View {
                             
                             NavigationLink {
                                 if #available(iOS 18.0, *) {
-                                    EpisodesListView(episodes: Array(self.episodes), characters: Array(self.characters))
-                                     .navigationTransition(.zoom(sourceID: "CharactersList", in: nameSpace))
+                                    // EpisodesListView()
+                                    // .navigationTransition(.zoom(sourceID: "CharactersList", in: nameSpace)
                                 } else {
-                                     EpisodesListView(episodes: Array(self.episodes), characters: Array(self.characters))
+                                    // EpisodesListView()
                                 }
                             } label: {
                                 if #available(iOS 18.0, *) {
