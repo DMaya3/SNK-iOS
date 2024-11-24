@@ -31,7 +31,7 @@ struct EpisodesListView: View {
                         LazyVStack {
                             ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
                                 NavigationLink {
-                                    // EpisodeDetailView(episode: item, episodes: self.episodes, characters: self.characters)
+                                    EpisodeDetailView(episode: item, episodes: self.episodes, characters: self.characters)
                                 } label: {
                                     VStack {
                                         HStack {

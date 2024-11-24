@@ -171,6 +171,40 @@
         }
       }
     },
+    "edv_episode_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Episode %@: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Episodio %@: %@"
+          }
+        }
+      }
+    },
+    "edv_season_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Season %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temporada %@"
+          }
+        }
+      }
+    },
     "link_more_info_home_view" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -240,7 +274,21 @@
       }
     },
     "No data" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Data"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin datos"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "status_charlist_view" : {
       "extractionState" : "manual",
