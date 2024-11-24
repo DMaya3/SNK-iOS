@@ -13,6 +13,25 @@ protocol ArrayConvertible {
     var img: Data? { get }
 }
 
+class LanguageSettings: ObservableObject {
+    @Published var selectedLanguage: Language {
+        didSet {
+            UserDefaults.standard.set(selectedLanguage.rawValue, forKey: "appLanguage")
+            UserDefaults.standard.synchronize()
+            updateLanguage()
+        }
+    }
+    
+    init() {
+        let savedLanguage = UserDefaults.standard.string(forKey: "appLanguage") ?? Language.english.rawValue
+        self.selectedLanguage = Language(rawValue: savedLanguage) ?? .english
+        updateLanguage()
+    }
+    
+    func updateLanguage() {
+        Bundle.setLanguage(self.selectedLanguage.rawValue)
+    }
+}
 
 private var bundleKey: UInt8 = 0
 
@@ -32,4 +51,30 @@ extension Bundle {
         let bundle = objc_getAssociatedObject(Bundle.main, &bundleKey) as? Bundle ?? Bundle.main
         return bundle.localizedString(forKey: key, value: value, table: tableName)
     }
+}
+
+enum Language: String, CaseIterable, Identifiable {
+    case english = "en"
+    case spanish = "es"
+    
+    var id: String { self.rawValue }
+    
+    var displayName: String {
+        switch self {
+        case .english:
+            return "English"
+        case .spanish:
+            return "Spanish"
+        }
+    }
+}
+
+enum Status: String, CaseIterable, Identifiable {
+    var id: Self {
+        self
+    }
+    case alive = "Alive"
+    case deceased = "Deceased"
+    case unknown = "Unknown"
+    case none
 }

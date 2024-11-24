@@ -17,12 +17,19 @@ protocol Localization {
     var link_more_info_home_view: String { get }
     
     var menu_home: String { get }
-    var menu_characters: String { get }
-    var menu_episodes: String { get }
     var menu_settings: String { get }
+    
+    func name_charlist_view(name: String) -> String
+    func age_charlist_view(age: String) -> String
+    func status_charlist_view(status: String) -> String
+    
+    var title_characters: String { get }
+    var title_episodes: String { get }
 }
 
 struct DefaultLocalization: Localization {
+    private var languageSetting = LanguageSettings()
+    
     // MARK: - Home View
     var title_home_view: String {
         return customLocalizedString("title_home_view")
@@ -57,16 +64,34 @@ struct DefaultLocalization: Localization {
         return customLocalizedString("menu_home")
     }
     
-    var menu_characters: String {
-        return customLocalizedString("menu_characters")
-    }
-    
-    var menu_episodes: String {
-        return customLocalizedString("menu_episodes")
-    }
-    
     var menu_settings: String {
         return customLocalizedString("menu_settings")
+    }
+    
+    // MARK: - Characters List View
+    func name_charlist_view(name: String) -> String {
+        let format = customLocalizedString("name_charlist_view")
+        return String(format: format, name)
+    }
+    
+    func age_charlist_view(age: String) -> String {
+        let format = customLocalizedString("age_charlist_view")
+        return String(format: format, age)
+    }
+    
+    func status_charlist_view(status: String) -> String {
+        let format = customLocalizedString("status_charlist_view")
+        let finalStatus = self.languageSetting.selectedLanguage.rawValue.contains("es") ? self.translateStatusToSP(status: status) : status
+        return String(format: format, finalStatus)
+    }
+    
+    // MARK: - Commons
+    var title_characters: String {
+        return customLocalizedString("title_characters")
+    }
+    
+    var title_episodes: String {
+        return customLocalizedString("title_episodes")
     }
 }
 
@@ -74,5 +99,21 @@ struct DefaultLocalization: Localization {
 extension DefaultLocalization {
     func customLocalizedString(_ key: String) -> String {
         return Bundle.localizedString(forKey: key, value: nil, table: nil)
+    }
+    
+    func translateStatusToSP(status: String) -> String {
+        let statusTranslate = Status(rawValue: status)
+        switch statusTranslate {
+        case .alive:
+            return "Vivo"
+        case .deceased:
+            return "Fallecido"
+        case .unknown:
+            return "Desconocido"
+        case .none?:
+            return "Ninguno"
+        default:
+            return ""
+        }
     }
 }

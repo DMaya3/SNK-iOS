@@ -59,15 +59,15 @@ struct MenuView: View {
                 .padding()
                 
                 NavigationLink {
-//                    CharactersListView(characters: self.characters,
-//                                       episodes: self.episodes)
-//                        .onAppear {
-//                            self.isMenuOpen = false
-//                        }
+                    CharactersListView(characters: self.characters,
+                                       episodes: self.episodes)
+                    .onAppear {
+                        self.isMenuOpen = false
+                    }
                 } label: {
                     HStack {
                         Image(systemName: "person.fill")
-                        Text(self.localization.menu_characters)
+                        Text(self.localization.title_characters)
                             .font(.headline)
                     }
                     .foregroundStyle(colorByColorScheme)
@@ -84,7 +84,7 @@ struct MenuView: View {
                 } label: {
                     HStack {
                         Image(systemName: "list.bullet.rectangle.fill")
-                        Text(self.localization.menu_episodes)
+                        Text(self.localization.title_episodes)
                             .font(.headline)
                     }
                     .foregroundStyle(self.colorByColorScheme)
