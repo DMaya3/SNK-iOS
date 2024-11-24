@@ -1,6 +1,23 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "age_charlist_view" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age: %@ years"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edad: %@ años"
+          }
+        }
+      }
+    },
     "description_home_view" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -31,40 +48,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aprende más de Ataque a los Titanes"
-          }
-        }
-      }
-    },
-    "menu_characters" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Characters"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Personajes"
-          }
-        }
-      }
-    },
-    "menu_episodes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Episodes"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Episodios"
           }
         }
       }
@@ -103,17 +86,39 @@
         }
       }
     },
-    "Select language" : {
-      "extractionState" : "stale",
+    "name_charlist_view" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Select language"
+            "value" : "Name: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre: %@"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
+    },
+    "status_charlist_view" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado: %@"
+          }
+        }
+      }
     },
     "text_more_info_home_view" : {
       "extractionState" : "manual",
@@ -128,6 +133,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Si quieres saber más del manga/anime tap en el link de debajo"
+          }
+        }
+      }
+    },
+    "title_characters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Characters"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personajes"
+          }
+        }
+      }
+    },
+    "title_episodes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Episodes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Episodios"
           }
         }
       }
