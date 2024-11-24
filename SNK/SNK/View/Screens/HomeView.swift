@@ -62,14 +62,14 @@ struct HomeView: View {
                             NavigationLink {
                                 if #available(iOS 18.0, *) {
                                     EpisodesListView(episodes: Array(self.episodes), characters: Array(self.characters))
-                                     .navigationTransition(.zoom(sourceID: "CharactersList", in: nameSpace))
+                                     .navigationTransition(.zoom(sourceID: "EpisodesList", in: nameSpace))
                                 } else {
                                      EpisodesListView(episodes: Array(self.episodes), characters: Array(self.characters))
                                 }
                             } label: {
                                 if #available(iOS 18.0, *) {
                                     CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
-                                        .matchedTransitionSource(id: "CharactersList", in: nameSpace)
+                                        .matchedTransitionSource(id: "EpisodesList", in: nameSpace)
                                 } else {
                                     CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
                                 }
