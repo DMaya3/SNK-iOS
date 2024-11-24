@@ -82,7 +82,7 @@ struct CharacterDetailView: View {
                 }
                 
                 if let urlEpisodes = self.character.episodes, !urlEpisodes.isEmpty {
-                    SectionImageCarouselView(nameSection: self.localization.cdv_section_episodes, urlEpisodes: urlEpisodes, episodes: self.episodes)
+                    SectionImageCarouselView(nameSection: self.localization.cdv_section_episodes, urlEpisodes: urlEpisodes, characters: self.characters, episodes: self.episodes)
                 }
             }
         }
