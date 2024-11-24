@@ -81,7 +81,7 @@ struct EpisodesListView: View {
                         .padding()
                     }
                     ToolbarItem(placement: .principal) {
-                        Text(self.localization.title_characters)
+                        Text(self.localization.title_episodes)
                             .font(.title3)
                             .fontWeight(.semibold)
                     }

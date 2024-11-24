@@ -77,10 +77,10 @@ struct MenuView: View {
                 .accessibilityIdentifier("menu_characters_button")
                 
                 NavigationLink {
-//                    EpisodesListView(episodes: self.episodes, characters: self.characters)
-//                        .onAppear {
-//                            isMenuOpen = false
-//                        }
+                    EpisodesListView(episodes: self.episodes, characters: self.characters)
+                        .onAppear {
+                            isMenuOpen = false
+                        }
                 } label: {
                     HStack {
                         Image(systemName: "list.bullet.rectangle.fill")
@@ -93,7 +93,7 @@ struct MenuView: View {
                 .accessibilityIdentifier("menu_episodes_button")
                 
                 NavigationLink {
-                   // SettingsView().onAppear { self.isMenuOpen = false }
+                    // SettingsView().onAppear { self.isMenuOpen = false }
                 } label: {
                     HStack {
                         Image(systemName: "gear")
