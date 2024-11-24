@@ -10,6 +10,7 @@ import CoreData
 
 struct CharactersListView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var viewModel: SNKViewModel
     @State private var isMenuOpen: Bool = false
     private var characters: [Characters]
@@ -30,7 +31,7 @@ struct CharactersListView: View {
                         LazyVStack {
                             ForEach(self.characters, id: \.self) { item in
                                 NavigationLink {
-                                    // CharacterDetailView(character: item, characters: self.characters, episodes: self.episodes)
+                                    CharacterDetailView(character: item, characters: self.characters, episodes: self.episodes)
                                 } label: {
                                     VStack {
                                         HStack {
@@ -72,7 +73,18 @@ struct CharactersListView: View {
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
+                .navigationBarBackButtonHidden()
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: {
+                            self.dismiss.callAsFunction()
+                        }) {
+                            Image(systemName: "chevron.backward")
+                                .foregroundStyle(self.colorByColorScheme)
+                                .font(.title3)
+                        }
+                        .padding()
+                    }
                     ToolbarItem(placement: .principal) {
                         Text(self.localization.title_characters)
                             .font(.title3)

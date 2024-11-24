@@ -25,6 +25,15 @@ protocol Localization {
     
     var title_characters: String { get }
     var title_episodes: String { get }
+    
+    func cdv_name_and_age(name: String, age: String) -> String
+    var cdv_alias: String { get }
+    func cdv_residence(birthplace: String, residence: String) -> String
+    var cdv_section_species: String { get }
+    func cdv_species(specie: String) -> String
+    func cdv_section_family(family: String) -> String
+    var cdv_section_roles: String { get }
+    var cdv_section_episodes: String { get }
 }
 
 struct DefaultLocalization: Localization {
@@ -32,66 +41,105 @@ struct DefaultLocalization: Localization {
     
     // MARK: - Home View
     var title_home_view: String {
-        return customLocalizedString("title_home_view")
+        return self.customLocalizedString("title_home_view")
     }
     
     var description_home_view: String {
-        return customLocalizedString("description_home_view")
+        return self.customLocalizedString("description_home_view")
     }
     
     var title_sections_home_view: String {
-        return customLocalizedString("title_sections_home_view")
+        return self.customLocalizedString("title_sections_home_view")
     }
     
     var title_section_characters_home_view: String {
-        return customLocalizedString("title_section_characters_home_view")
+        return self.customLocalizedString("title_section_characters_home_view")
     }
     
     var title_section_episodes_home_view: String {
-        return customLocalizedString("title_section_episodes_home_view")
+        return self.customLocalizedString("title_section_episodes_home_view")
     }
     
     var text_more_info_home_view: String {
-        return customLocalizedString("text_more_info_home_view")
+        return self.customLocalizedString("text_more_info_home_view")
     }
     
     var link_more_info_home_view: String {
-        return customLocalizedString("link_more_info_home_view")
+        return self.customLocalizedString("link_more_info_home_view")
     }
     
     // MARK: - Menu View
     var menu_home: String {
-        return customLocalizedString("menu_home")
+        return self.customLocalizedString("menu_home")
     }
     
     var menu_settings: String {
-        return customLocalizedString("menu_settings")
+        return self.customLocalizedString("menu_settings")
     }
     
     // MARK: - Characters List View
     func name_charlist_view(name: String) -> String {
-        let format = customLocalizedString("name_charlist_view")
+        let format = self.customLocalizedString("name_charlist_view")
         return String(format: format, name)
     }
     
     func age_charlist_view(age: String) -> String {
-        let format = customLocalizedString("age_charlist_view")
+        let format = self.customLocalizedString("age_charlist_view")
         return String(format: format, age)
     }
     
     func status_charlist_view(status: String) -> String {
-        let format = customLocalizedString("status_charlist_view")
+        let format = self.customLocalizedString("status_charlist_view")
         let finalStatus = self.languageSetting.selectedLanguage.rawValue.contains("es") ? self.translateStatusToSP(status: status) : status
         return String(format: format, finalStatus)
     }
     
     // MARK: - Commons
     var title_characters: String {
-        return customLocalizedString("title_characters")
+        return self.customLocalizedString("title_characters")
     }
     
     var title_episodes: String {
-        return customLocalizedString("title_episodes")
+        return self.customLocalizedString("title_episodes")
+    }
+    
+    // MARK: - Character Detail View
+    func cdv_name_and_age(name: String, age: String) -> String {
+        let format = self.customLocalizedString("cdv_name_and_age")
+        return String(format: format, name, age)
+    }
+    
+    var cdv_alias: String {
+        return self.customLocalizedString("cdv_alias")
+    }
+    
+    func cdv_residence(birthplace: String, residence: String) -> String {
+        let format = self.customLocalizedString("cdv_residence")
+        return String(format: format, birthplace, residence)
+    }
+    
+    var cdv_section_species: String {
+        return self.customLocalizedString("cdv_section_species")
+    }
+    
+    func cdv_species(specie: String) -> String {
+        let format = self.customLocalizedString("cdv_species")
+        let finalSpecie = self.languageSetting.selectedLanguage.rawValue.contains("es") ? self.translateSpeciesToSP(specie: specie) : specie
+        return String(format: format, finalSpecie)
+    }
+    
+    func cdv_section_family(family: String) -> String {
+        let format = self.customLocalizedString("cdv_section_family")
+        let finalFamily = self.languageSetting.selectedLanguage.rawValue.contains("es") ? self.reverseAndReplace(in: family) : family
+        return String(format: format, finalFamily)
+    }
+    
+    var cdv_section_roles: String {
+        return self.customLocalizedString("cdv_section_roles")
+    }
+    
+    var cdv_section_episodes: String {
+        return self.customLocalizedString("cdv_section_episodes")
     }
 }
 
@@ -115,5 +163,28 @@ extension DefaultLocalization {
         default:
             return ""
         }
+    }
+    
+    func translateSpeciesToSP(specie: String) -> String {
+        let specieTranslate = Species(rawValue: specie)
+        switch specieTranslate {
+        case .human:
+            return "Humano"
+        case .intelligentTItan:
+            return "Titán inteligente"
+        case .titanFormerlyHuman:
+            return "Titán (antes humano)"
+        case nil:
+            return ""
+        }
+    }
+    
+    func reverseAndReplace(in sentence: String) -> String {
+        var words = sentence.split(separator: " ").map(String.init)
+        if let index = words.firstIndex(of: "family") {
+            words[index] = "Familia"
+        }
+        let reversedWrods = words.reversed()
+        return reversedWrods.joined(separator: " ")
     }
 }
