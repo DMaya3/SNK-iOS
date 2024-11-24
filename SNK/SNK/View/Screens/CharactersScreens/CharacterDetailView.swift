@@ -61,6 +61,7 @@ struct CharacterDetailView: View {
                 if let residence = self.character.residence, let birthplace = self.character.birthplace {
                     Text(self.localization.cdv_residence(birthplace: birthplace, residence: residence))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
                 }
                 
                 if let species = self.character.species, !species.isEmpty {
