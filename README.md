@@ -31,10 +31,16 @@ In the app´s view model it fetchs data by publishers and get it by suscribers. 
 The view of this app is divided in some views.
 
 ### Home View
-The principal view. The first screen that the user see when open the app. This screen has a title, description, two cards sections and on link at the end to get more info about manga/anime. Those sections are characters and episodes and each section navigate to their respectives screens. Futher more, the image cards automatic change each 3 seconds. It has a menu too. That menu has 4 options: Home, Characters, Episodes and Settings. It funcionality is told later.
+The principal view. The first screen that the user see when open the app. This screen has a title, description, two cards sections and a link at the end to get more info about manga/anime. Those sections are characters and episodes and each section navigate to their respectives screens. Futher more, the image cards automatic change each 3 seconds. It has a menu too. That menu has 4 options: Home, Characters, Episodes and Settings. It funcionality is told later.
 
 The link at the end of the screen open a sheet displaying a webview (https://attackontitan.fandom.com/wiki/Attack_on_Titan_Wiki).
 
 ### Home View Screenshot
 
 https://github.com/user-attachments/assets/1a80ac03-4df1-4ba8-bc3b-ac3eddfe20f0
+
+### Characters View
+
+When the user tap in characters card section it navigates to a list of characters. This list has 201 characters with some info like name, age, status (alive, deceassed or unknown) and image. Each item navigates to a detail screen. In that screen the user can see more info about the character: residence, recognized species, alias, roles, family and episodes (carousel) and each item of family and episodes carousel navigate to it respective detail screen. Futher more, that screen has a back button to back to previous screen and other button to navigate to Home screen.
+
+https://github.com/user-attachments/assets/2253e7cd-1a9b-4f00-b833-de5073639e77
