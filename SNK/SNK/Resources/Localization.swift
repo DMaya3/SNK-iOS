@@ -38,6 +38,11 @@ protocol Localization {
     
     func edv_season_title(number: String) -> String
     func edv_episode_title(number: String, title: String) -> String
+    
+    var settings_appearance_section: String { get }
+    var settings_languages_section: String { get }
+    var settings_dark_mode: String { get }
+    var settings_select_language: String { get }
 }
 
 struct DefaultLocalization: Localization {
@@ -159,6 +164,23 @@ struct DefaultLocalization: Localization {
     func edv_episode_title(number: String, title: String) -> String {
         let format = self.customLocalizedString("edv_episode_title")
         return String(format: format, number, title)
+    }
+    
+    // MARK: - Settings View
+    var settings_appearance_section: String {
+        return self.customLocalizedString("settings_appearance_section")
+    }
+    
+    var settings_languages_section: String {
+        return self.customLocalizedString("settings_languages_section")
+    }
+    
+    var settings_dark_mode: String {
+        return self.customLocalizedString("settings_dark_mode")
+    }
+    
+    var settings_select_language: String {
+        return self.customLocalizedString("settings_select_language")
     }
 }
 
