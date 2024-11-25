@@ -59,6 +59,12 @@ https://github.com/user-attachments/assets/49735bbf-552d-4752-afe7-7984f03d7379
 
 ### Menu View
 
-As discussed in the section on Home View I´m going to tell you about menu view and it options. When the user tap in the top trailling button it opens a lateral menu with four options: Home, Characters, Episodes and Settings. Each option of this menu navigates to it respective screen. To close the menu the user can tap in the close button (top trealling of menu) or in anyplace of the screen.
+As discussed in the section on Home View I´m going to tell you about menu view and it options. When the user tap in the top trailing button it opens a lateral menu with four options: Home, Characters, Episodes and Settings. Each option of this menu navigates to it respective screen. To close the menu the user can tap in the close button (top trealling of menu) or in anyplace of the screen.
 
 https://github.com/user-attachments/assets/ab6eea06-41dc-4605-963b-81747665855e
+
+### Filter View
+
+Both characters list and episodes list has a floating button bottom trailing which navigates to Filter view. This view allows the user search by name and status (in case the user wants filter characters) or by name and seasons (in case the user wants filter episodes). The filter button in both lists change the image and action when is filtered. When is filtered, the same floating button clean filters and it get back the original list.
+
+https://github.com/user-attachments/assets/9e3435c2-3e40-4ae6-806e-0fd9b4911c72
