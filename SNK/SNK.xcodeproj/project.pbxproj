@@ -56,6 +56,8 @@
 		BBE6A9BC2CEE7AB00006E7CC /* Root+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9BA2CEE7AB00006E7CC /* Root+CoreDataProperties.swift */; };
 		BBEB11422CF1CEF00048A65B /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB11412CF1CEEC0048A65B /* CharactersListView.swift */; };
 		BBEB11452CF1D1910048A65B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEB11442CF1D1910048A65B /* ImageView.swift */; };
+		BBFBCCC72CF469C3004462D6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBCCC62CF469BE004462D6 /* SettingsView.swift */; };
+		BBFBCCCB2CF46A60004462D6 /* SettingsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBCCCA2CF46A5D004462D6 /* SettingsHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		BBE6A9BA2CEE7AB00006E7CC /* Root+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BBEB11412CF1CEEC0048A65B /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
 		BBEB11442CF1D1910048A65B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		BBFBCCC62CF469BE004462D6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BBFBCCCA2CF46A5D004462D6 /* SettingsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 				BBB273122CF34AEE00DBFC21 /* EpisodesScreens */,
 				BBEB11402CF1CEE20048A65B /* CharactersScreens */,
 				BBE6A95E2CEE72680006E7CC /* HomeView.swift */,
+				BBFBCCC62CF469BE004462D6 /* SettingsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -297,9 +302,9 @@
 		BBE6A9B42CEE7A130006E7CC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BBFBCCC92CF46A56004462D6 /* Helpers */,
 				BBCAF3EE2CEF2B060004AB37 /* NetworkingHelpers.swift */,
 				BBCAF3EC2CEF28520004AB37 /* APICall.swift */,
-				BBE6A9B72CEE7A540006E7CC /* Helpers.swift */,
 				BBE6A9B52CEE7A1A0006E7CC /* Errors.swift */,
 			);
 			path = Utils;
@@ -312,6 +317,15 @@
 				BBEB11412CF1CEEC0048A65B /* CharactersListView.swift */,
 			);
 			path = CharactersScreens;
+			sourceTree = "<group>";
+		};
+		BBFBCCC92CF46A56004462D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BBFBCCCA2CF46A5D004462D6 /* SettingsHelpers.swift */,
+				BBE6A9B72CEE7A540006E7CC /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +423,7 @@
 				BBAD92132CF09A420040FC01 /* MenuView.swift in Sources */,
 				BBCA93F02CF31751004312F9 /* CharacterDetailView.swift in Sources */,
 				BBE6A9AB2CEE78BB0006E7CC /* Relatives+Transformer.swift in Sources */,
+				BBFBCCCB2CF46A60004462D6 /* SettingsHelpers.swift in Sources */,
 				BBE6A99B2CEE77EB0006E7CC /* Groups+CoreDataClass.swift in Sources */,
 				BBE6A9AD2CEE78DB0006E7CC /* Characters+Transformer.swift in Sources */,
 				BBAD92112CF095140040FC01 /* Localization.swift in Sources */,
@@ -416,6 +431,7 @@
 				BBEB11422CF1CEF00048A65B /* CharactersListView.swift in Sources */,
 				BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */,
 				BBCA93F42CF31F4B004312F9 /* SectionImageCarouselView.swift in Sources */,
+				BBFBCCC72CF469C3004462D6 /* SettingsView.swift in Sources */,
 				BBE6A9B82CEE7A560006E7CC /* Helpers.swift in Sources */,
 				BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */,
 				BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */,

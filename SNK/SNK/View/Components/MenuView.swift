@@ -93,7 +93,10 @@ struct MenuView: View {
                 .accessibilityIdentifier("menu_episodes_button")
                 
                 NavigationLink {
-                    // SettingsView().onAppear { self.isMenuOpen = false }
+                    SettingsView()
+                        .onAppear {
+                            self.isMenuOpen = false
+                        }
                 } label: {
                     HStack {
                         Image(systemName: "gear")
