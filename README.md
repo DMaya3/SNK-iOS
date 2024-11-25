@@ -41,6 +41,24 @@ https://github.com/user-attachments/assets/1a80ac03-4df1-4ba8-bc3b-ac3eddfe20f0
 
 ### Characters View
 
-When the user tap in characters card section it navigates to a list of characters. This list has 201 characters with some info like name, age, status (alive, deceassed or unknown) and image. Each item navigates to a detail screen. In that screen the user can see more info about the character: residence, recognized species, alias, roles, family and episodes (carousel) and each item of family and episodes carousel navigate to it respective detail screen. Futher more, that screen has a back button to back to previous screen and other button to navigate to Home screen.
+When the user tap in characters card section it navigates to a list of characters. This list has all characters of manga/anime with some info like name, age, status (alive, deceassed or unknown) and image. Each item navigates to a detail screen. In that screen the user can see more info about the character: residence, recognized species, alias, roles, family and episodes (carousel) and each item of family and episodes carousel navigate to it respective detail screen. Futher more, that screen has a back button to back to previous screen and other button to navigate to Home screen.
 
 https://github.com/user-attachments/assets/2253e7cd-1a9b-4f00-b833-de5073639e77
+
+### Episodes View
+
+When the user tap in episodes card section it navigates to a list of episodes. This list has all episodes of anime with some info like name, number episode and image. Each item navigates to a detail screen where the user can see a list of characters which participate in that episode. Each item of that list of characters navigates to that character detail screen.
+
+https://github.com/user-attachments/assets/a9ee739f-01dd-4e34-8c97-7ef0c17658fa
+
+### Settings View
+
+The app has a settings screen where the user can set the language and the appearance (dark mode). These preferences are saved in the device what allows to the user maintain his preference when the user open the app again.
+
+https://github.com/user-attachments/assets/49735bbf-552d-4752-afe7-7984f03d7379
+
+### Menu View
+
+As discussed in the section on Home View I´m going to tell you about menu view and it options. When the user tap in the top trailling button it opens a lateral menu with four options: Home, Characters, Episodes and Settings. Each option of this menu navigates to it respective screen. To close the menu the user can tap in the close button (top trealling of menu) or in anyplace of the screen.
+
+https://github.com/user-attachments/assets/ab6eea06-41dc-4605-963b-81747665855e
