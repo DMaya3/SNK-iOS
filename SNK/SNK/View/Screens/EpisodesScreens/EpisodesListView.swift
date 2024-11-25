@@ -13,18 +13,24 @@ struct EpisodesListView: View {
     @EnvironmentObject private var viewModel: SNKViewModel
     @State private var isMenuOpen: Bool = false
     @State private var isZoomed: Bool = false
-    private var episodes: [Episodes]
+    @State private var isPresented: Bool = false
+    @State private var isFiltered: Bool = false
+    @State private var name: String = ""
+    @State private var seasons: Seasons = .none
+    @State private var episodes: [Episodes]
     private var characters: [Characters]
+    private var originalEpisodes: [Episodes]
     
     init(episodes: [Episodes], characters: [Characters]) {
         self.episodes = episodes
         self.characters = characters
+        self.originalEpisodes = episodes
     }
     
     var body: some View {
         ZStack {
             if self.episodes.isEmpty {
-                EmptyListView()
+                EmptyListView(isFiltered: $isFiltered)
             } else {
                 VStack {
                     ScrollView {
@@ -69,6 +75,14 @@ struct EpisodesListView: View {
                 .background(LinearGradient(colors: [Color(.backgroundOne), Color(.backgroundTwo)],
                                            startPoint: .topLeading,
                                            endPoint: .bottomTrailing))
+                .sheet(isPresented: $isPresented, content: {
+                    FilterView(isCharacter: false) { name, _, seasons in
+                        self.name = name
+                        self.seasons = seasons
+                        self.isFiltered = name.isEmpty && seasons == .none ? false : true
+                        self.episodes = self.viewModel.filterEpisodes(filterName: self.name, filterSeason: self.seasons)
+                    }
+                })
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button(action: {
@@ -99,6 +113,29 @@ struct EpisodesListView: View {
                     }
                 }
             }
+            
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation {
+                            if self.isFiltered {
+                                self.isFiltered = false
+                                self.isPresented = false
+                                self.episodes = self.originalEpisodes
+                            } else {
+                                self.isPresented = true
+                            }
+                        }
+                    } label: {
+                        FilterButtonView(isFiltered: $isFiltered)
+                    }
+                    .transition(.scale)
+                    .padding(.trailing, 35)
+                }
+            }
+            
             if self.isMenuOpen {
                 HStack {
                     MenuView(isMenuOpen: $isMenuOpen, characters: self.characters, episodes: self.episodes)

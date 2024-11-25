@@ -17,6 +17,17 @@ enum Status: String, CaseIterable, Identifiable {
     case none
 }
 
+enum Seasons: String, CaseIterable, Identifiable {
+    var id: Self {
+        self
+    }
+    case sOne = "1"
+    case sTwo = "2"
+    case sThree = "3"
+    case sFour = "4"
+    case none
+}
+
 enum Species: String {
     case human = "Human"
     case intelligentTItan = "Intelligent Titan"

@@ -130,3 +130,57 @@ extension SNKViewModel {
         }
     }
 }
+
+// MARK: - Filters
+extension SNKViewModel {
+    func filterCharacters(filterName: String = "", filterStatus: Status = .none) -> [Characters] {
+        let filteredCharacters = self.characters.filter { character in
+            guard let name = character.name, let status = character.status else {
+                return false
+            }
+            if !filterName.isEmpty && filterStatus != .none {
+                return name.lowercased().contains(filterName.lowercased()) && status.contains(filterStatus.rawValue)
+            } else if !filterName.isEmpty {
+                return name.lowercased().contains(filterName.lowercased())
+            } else if filterStatus != .none {
+                return status.contains(filterStatus.rawValue)
+            } else {
+                return false
+            }
+        }
+        return filteredCharacters
+    }
+    
+    func filterEpisodes(filterName: String = "", filterSeason: Seasons = .none) -> [Episodes] {
+        var filterSeasonString: String {
+            switch filterSeason {
+            case .sOne:
+                return "S1"
+            case .sTwo:
+                return "S2"
+            case .sThree:
+                return "S3"
+            case .sFour:
+                return "S4"
+            case .none:
+                return ""
+            }
+        }
+        
+        let filteredEpisodes = self.episodes.filter { episode in
+            guard let name = episode.name, let numberEpisode = episode.episode else {
+                return false
+            }
+            if !filterName.isEmpty && filterSeason != .none {
+                return name.lowercased().contains(filterName.lowercased()) && numberEpisode.starts(with: filterSeasonString)
+            } else if !filterName.isEmpty {
+                return name.lowercased().contains(filterName.lowercased())
+            } else if filterSeason != .none {
+                return numberEpisode.starts(with: filterSeasonString)
+            } else {
+                return false
+            }
+        }
+        return filteredEpisodes
+    }
+}
