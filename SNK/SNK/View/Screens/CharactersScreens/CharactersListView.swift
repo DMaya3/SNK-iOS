@@ -24,7 +24,7 @@ struct CharactersListView: View {
     var body: some View {
         ZStack {
             if self.characters.isEmpty {
-                // EmptyView()
+                EmptyListView()
             } else {
                 VStack {
                     ScrollView {
