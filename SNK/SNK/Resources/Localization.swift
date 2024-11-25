@@ -54,6 +54,13 @@ protocol Localization {
     var filter_btn_apply: String { get }
     var filter_btn_cancel: String { get }
     var filter_btn_clear: String { get }
+    
+    var accessibility_toolbar_back_btn: String { get }
+    var accessibility_toolbar_menu_btn: String { get }
+    var accessibility_filter_btn: String { get }
+    var accessibility_clear_btn: String { get }
+    var accessibility_swipe_carousel: String { get }
+    var accessibility_toolbar_home: String { get }
 }
 
 struct DefaultLocalization: Localization {
@@ -238,6 +245,31 @@ struct DefaultLocalization: Localization {
     
     var filter_btn_clear: String {
         return self.customLocalizedString("filter_btn_clear")
+    }
+    
+    // MARK: - Accessibility Labels
+    var accessibility_toolbar_back_btn: String {
+        return self.customLocalizedString("accessibility_toolbar_back_btn")
+    }
+
+    var accessibility_toolbar_menu_btn: String {
+        return self.customLocalizedString("accessibility_toolbar_menu_btn")
+    }
+    
+    var accessibility_filter_btn: String {
+        return self.customLocalizedString("accessibility_filter_btn")
+    }
+    
+    var accessibility_clear_btn: String {
+        return self.customLocalizedString("accessibility_clear_btn")
+    }
+    
+    var accessibility_swipe_carousel: String {
+        return self.customLocalizedString("accessibility_swipe_carousel")
+    }
+    
+    var accessibility_toolbar_home: String {
+        return self.customLocalizedString("accessibility_toolbar_home")
     }
 }
 

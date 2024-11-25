@@ -29,6 +29,7 @@ struct HomeView: View {
                                 .fontWeight(.semibold)
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(alignment: .center)
+                                .accessibilityAddTraits(.isHeader)
                             
                             Text(self.localization.description_home_view)
                                 .font(.subheadline)
@@ -42,6 +43,7 @@ struct HomeView: View {
                                 .fontWeight(.semibold)
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(alignment: .center)
+                                .accessibilityAddTraits(.isHeader)
                             
                             NavigationLink {
                                 if #available(iOS 18.0, *) {
@@ -58,6 +60,9 @@ struct HomeView: View {
                                     CardSectionView(titleSection: self.localization.title_section_characters_home_view, characters: Array(self.characters))
                                 }
                             }
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel(self.localization.title_section_characters_home_view)
+                            .accessibilityAddTraits(.isButton)
                             
                             NavigationLink {
                                 if #available(iOS 18.0, *) {
@@ -74,6 +79,9 @@ struct HomeView: View {
                                     CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
                                 }
                             }
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel(self.localization.title_section_episodes_home_view)
+                            .accessibilityAddTraits(.isButton)
                             
                             Text(self.localization.text_more_info_home_view)
                                 .font(.subheadline)
@@ -91,6 +99,7 @@ struct HomeView: View {
                                 .onTapGesture {
                                     self.showWebView = true
                                 }
+                                .accessibilityAddTraits(.isLink)
                         }
                         .frame(width: UIScreen.main.bounds.width)
                         .background(LinearGradient(colors: [Color(.backgroundOne), Color(.backgroundTwo)], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -107,6 +116,7 @@ struct HomeView: View {
                                     .scaledToFit()
                                     .frame(width: 50, height: 50)
                                     .padding()
+                                    .accessibilityHidden(true)
                             }
                             
                             ToolbarItem(placement: .topBarTrailing) {
@@ -120,6 +130,8 @@ struct HomeView: View {
                                         .tint(self.colorByColorScheme)
                                 })
                                 .padding()
+                                .accessibilityElement(children: .combine)
+                                .accessibilityLabel(self.localization.accessibility_toolbar_menu_btn)
                             }
                         }
                     }
