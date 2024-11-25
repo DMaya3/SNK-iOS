@@ -42,6 +42,7 @@ struct EmptyListView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden()
         .background(LinearGradient(
             colors: [Color(.backgroundOne), Color(.backgroundTwo)],
             startPoint: .topLeading,
