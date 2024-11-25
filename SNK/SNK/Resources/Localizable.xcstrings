@@ -205,6 +205,23 @@
         }
       }
     },
+    "empty_list_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorry, there is nothing to display. Try it later!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, no hay nada que mostrar. ¡Inténtalo más tarde!"
+          }
+        }
+      }
+    },
     "link_more_info_home_view" : {
       "extractionState" : "manual",
       "localizations" : {

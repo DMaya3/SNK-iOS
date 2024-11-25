@@ -24,7 +24,7 @@ struct EpisodesListView: View {
     var body: some View {
         ZStack {
             if self.episodes.isEmpty {
-               // EmptyListView()
+                EmptyListView()
             } else {
                 VStack {
                     ScrollView {
