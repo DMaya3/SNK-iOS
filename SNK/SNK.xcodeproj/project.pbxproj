@@ -12,6 +12,12 @@
 		BB0BBE392CF4B3F70014C968 /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BBE382CF4B3F70014C968 /* FilterButtonView.swift */; };
 		BB3E067E2CF39E1000332F81 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */; };
 		BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */; };
+		BB54228D2CF4DFF300D2D9C5 /* MockEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */; };
+		BB54228F2CF4E00900D2D9C5 /* MockRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */; };
+		BB5422912CF4E01700D2D9C5 /* MockInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422902CF4E01700D2D9C5 /* MockInformation.swift */; };
+		BB5422932CF4E02200D2D9C5 /* MockCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */; };
+		BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */; };
+		BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */; };
 		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
 		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
@@ -63,12 +69,29 @@
 		BBFBCCCB2CF46A60004462D6 /* SettingsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFBCCCA2CF46A5D004462D6 /* SettingsHelpers.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BB5422832CF4DFD200D2D9C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBA53FA62CEE5C26005172E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBA53FAD2CEE5C26005172E9;
+			remoteInfo = SNK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BB0BBE342CF4986E0014C968 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		BB0BBE362CF4ACF70014C968 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		BB0BBE382CF4B3F70014C968 /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		BB54227F2CF4DFD200D2D9C5 /* SNKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodes.swift; sourceTree = "<group>"; };
+		BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoot.swift; sourceTree = "<group>"; };
+		BB5422902CF4E01700D2D9C5 /* MockInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInformation.swift; sourceTree = "<group>"; };
+		BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacters.swift; sourceTree = "<group>"; };
+		BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKRepositoryTest.swift; sourceTree = "<group>"; };
+		BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +145,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB54227C2CF4DFD200D2D9C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBA53FAB2CEE5C26005172E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,10 +162,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422992CF4F54F00D2D9C5 /* IntegrationTest */,
+				BB5422942CF4E02A00D2D9C5 /* UnitTest */,
+				BB54228B2CF4DFE300D2D9C5 /* MockData */,
+			);
+			path = SNKTests;
+			sourceTree = "<group>";
+		};
+		BB54228B2CF4DFE300D2D9C5 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */,
+				BB5422902CF4E01700D2D9C5 /* MockInformation.swift */,
+				BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */,
+				BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		BB5422942CF4E02A00D2D9C5 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */,
+			);
+			path = UnitTest;
+			sourceTree = "<group>";
+		};
+		BB5422992CF4F54F00D2D9C5 /* IntegrationTest */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */,
+			);
+			path = IntegrationTest;
+			sourceTree = "<group>";
+		};
 		BBA53FA52CEE5C26005172E9 = {
 			isa = PBXGroup;
 			children = (
 				BBE6A9602CEE72680006E7CC /* SNK */,
+				BB5422892CF4DFDC00D2D9C5 /* SNKTests */,
 				BBA53FAF2CEE5C26005172E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -144,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA53FAE2CEE5C26005172E9 /* SNK.app */,
+				BB54227F2CF4DFD200D2D9C5 /* SNKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,6 +409,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB54227E2CF4DFD200D2D9C5 /* SNKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB5422872CF4DFD200D2D9C5 /* Build configuration list for PBXNativeTarget "SNKTests" */;
+			buildPhases = (
+				BB54227B2CF4DFD200D2D9C5 /* Sources */,
+				BB54227C2CF4DFD200D2D9C5 /* Frameworks */,
+				BB54227D2CF4DFD200D2D9C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB5422842CF4DFD200D2D9C5 /* PBXTargetDependency */,
+			);
+			name = SNKTests;
+			packageProductDependencies = (
+			);
+			productName = SNKTests;
+			productReference = BB54227F2CF4DFD200D2D9C5 /* SNKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BBA53FAD2CEE5C26005172E9 /* SNK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBA53FBC2CEE5C28005172E9 /* Build configuration list for PBXNativeTarget "SNK" */;
@@ -369,6 +458,10 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					BB54227E2CF4DFD200D2D9C5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = BBA53FAD2CEE5C26005172E9;
+					};
 					BBA53FAD2CEE5C26005172E9 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -390,11 +483,19 @@
 			projectRoot = "";
 			targets = (
 				BBA53FAD2CEE5C26005172E9 /* SNK */,
+				BB54227E2CF4DFD200D2D9C5 /* SNKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB54227D2CF4DFD200D2D9C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBA53FAC2CEE5C26005172E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +509,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB54227B2CF4DFD200D2D9C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */,
+				BB5422932CF4E02200D2D9C5 /* MockCharacters.swift in Sources */,
+				BB5422912CF4E01700D2D9C5 /* MockInformation.swift in Sources */,
+				BB54228F2CF4E00900D2D9C5 /* MockRoot.swift in Sources */,
+				BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */,
+				BB54228D2CF4DFF300D2D9C5 /* MockEpisodes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BBA53FAA2CEE5C26005172E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,7 +582,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BB5422842CF4DFD200D2D9C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBA53FAD2CEE5C26005172E9 /* SNK */;
+			targetProxy = BB5422832CF4DFD200D2D9C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		BB5422852CF4DFD200D2D9C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8BW3D3BVS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davmayqui.SNKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SNK";
+			};
+			name = Debug;
+		};
+		BB5422862CF4DFD200D2D9C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8BW3D3BVS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davmayqui.SNKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNK.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SNK";
+			};
+			name = Release;
+		};
 		BBA53FBA2CEE5C28005172E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -651,6 +809,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB5422872CF4DFD200D2D9C5 /* Build configuration list for PBXNativeTarget "SNKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB5422852CF4DFD200D2D9C5 /* Debug */,
+				BB5422862CF4DFD200D2D9C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BBA53FA92CEE5C26005172E9 /* Build configuration list for PBXProject "SNK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
