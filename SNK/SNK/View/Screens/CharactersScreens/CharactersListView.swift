@@ -30,7 +30,7 @@ struct CharactersListView: View {
     var body: some View {
         ZStack {
             if self.characters.isEmpty {
-                EmptyListView()
+                EmptyListView(isFiltered: $isFiltered)
             } else {
                 VStack {
                     ScrollView {
