@@ -165,6 +165,7 @@
 		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
 			isa = PBXGroup;
 			children = (
+				BB5422992CF4F54F00D2D9C5 /* IntegrationTest */,
 				BB5422942CF4E02A00D2D9C5 /* UnitTest */,
 				BB54228B2CF4DFE300D2D9C5 /* MockData */,
 			);
@@ -186,9 +187,16 @@
 			isa = PBXGroup;
 			children = (
 				BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */,
-				BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */,
 			);
 			path = UnitTest;
+			sourceTree = "<group>";
+		};
+		BB5422992CF4F54F00D2D9C5 /* IntegrationTest */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */,
+			);
+			path = IntegrationTest;
 			sourceTree = "<group>";
 		};
 		BBA53FA52CEE5C26005172E9 = {
