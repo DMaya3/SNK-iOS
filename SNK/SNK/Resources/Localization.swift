@@ -212,7 +212,8 @@ struct DefaultLocalization: Localization {
     
     func filter_status_value(status: String) -> String {
         let format = self.customLocalizedString("filter_status_value")
-        return String(format: format, status)
+        let finalStatus = self.languageSetting.selectedLanguage.rawValue.contains("es") ? self.translateStatusToSP(status: status) : status
+        return String(format: format, finalStatus)
     }
     
     var filter_season_header: String {
@@ -221,6 +222,9 @@ struct DefaultLocalization: Localization {
     
     func filter_season_title(season: String) -> String {
         let format = self.customLocalizedString("filter_season_title")
+        if season.contains("none") {
+            return self.languageSetting.selectedLanguage.rawValue.contains("es") ? "Ninguna" : "None"
+        }
         return String(format: format, season)
     }
     
@@ -229,7 +233,7 @@ struct DefaultLocalization: Localization {
     }
     
     var filter_btn_cancel: String {
-        return self.customLocalizedString("filrter_btn_cancel")
+        return self.customLocalizedString("filter_btn_cancel")
     }
     
     var filter_btn_clear: String {

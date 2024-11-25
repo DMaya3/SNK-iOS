@@ -45,6 +45,7 @@ struct FilterView: View {
                         }
                         .pickerStyle(.segmented)
                         .padding()
+                        .colorMultiply(Color(.filter).opacity(0.8))
                     } else {
                         Picker(self.localization.filter_season_header, selection: $seasonFiltered) {
                             ForEach(Seasons.allCases) { season in
@@ -93,9 +94,11 @@ struct FilterView: View {
                             if self.name.isEmpty && self.statusFiltered == .none && self.seasonFiltered == .none {
                                 self.dismiss.callAsFunction()
                             } else {
-                                self.name = ""
-                                self.statusFiltered = .none
-                                self.seasonFiltered = .none
+                                withAnimation {
+                                    self.name = ""
+                                    self.statusFiltered = .none
+                                    self.seasonFiltered = .none
+                                }
                             }
                         } label: {
                             if self.name.isEmpty && self.statusFiltered == .none && self.seasonFiltered == .none {

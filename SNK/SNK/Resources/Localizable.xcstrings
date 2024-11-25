@@ -444,6 +444,7 @@
       }
     },
     "No data" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

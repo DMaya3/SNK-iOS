@@ -21,10 +21,10 @@ enum Seasons: String, CaseIterable, Identifiable {
     var id: Self {
         self
     }
-    case sOne = "S1"
-    case sTwo = "S2"
-    case sThree = "S3"
-    case sFour = "S4"
+    case sOne = "1"
+    case sTwo = "2"
+    case sThree = "3"
+    case sFour = "4"
     case none
 }
 

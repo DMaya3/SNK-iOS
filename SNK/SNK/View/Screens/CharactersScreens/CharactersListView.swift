@@ -13,12 +13,18 @@ struct CharactersListView: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var viewModel: SNKViewModel
     @State private var isMenuOpen: Bool = false
-    private var characters: [Characters]
+    @State private var isPresented: Bool = false
+    @State private var isFiltered: Bool = false
+    @State private var name: String = ""
+    @State private var status: Status = .none
+    @State private var characters: [Characters]
     private var episodes: [Episodes]
+    private var originalCharacters: [Characters]
     
     init(characters: [Characters], episodes: [Episodes]) {
         self.characters = characters
         self.episodes = episodes
+        self.originalCharacters = characters
     }
     
     var body: some View {
@@ -73,6 +79,14 @@ struct CharactersListView: View {
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
+                .sheet(isPresented: $isPresented, content: {
+                    FilterView(isCharacter: true) { name, status, _ in
+                        self.name = name
+                        self.status = status
+                        self.isFiltered = name.isEmpty && status == .none ? false : true
+                        self.characters = self.viewModel.filterCharacters(filterName: self.name, filterStatus: self.status)
+                    }
+                })
                 .navigationBarBackButtonHidden()
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
@@ -104,6 +118,28 @@ struct CharactersListView: View {
                     }
                 }
                 
+            }
+            
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                        withAnimation {
+                            if self.isFiltered {
+                                self.isFiltered = false
+                                self.isPresented = false
+                                self.characters = self.originalCharacters
+                            } else {
+                                self.isPresented = true
+                            }
+                        }
+                    } label: {
+                        FilterButtonView(isFiltered: $isFiltered)
+                    }
+                    .transition(.scale)
+                    .padding(.trailing, 25)
+                }
             }
             
             if isMenuOpen {
