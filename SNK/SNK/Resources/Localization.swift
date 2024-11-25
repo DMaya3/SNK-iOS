@@ -26,6 +26,7 @@ protocol Localization {
     var title_characters: String { get }
     var title_episodes: String { get }
     var empty_list_description: String { get }
+    var no_data: String { get }
     
     func cdv_name_and_age(name: String, age: String) -> String
     var cdv_alias: String { get }
@@ -43,6 +44,16 @@ protocol Localization {
     var settings_languages_section: String { get }
     var settings_dark_mode: String { get }
     var settings_select_language: String { get }
+    
+    var filter_title_header: String { get }
+    var filter_name_hint: String { get }
+    var filter_status_header: String { get }
+    func filter_status_value(status: String) -> String
+    var filter_season_header: String { get }
+    func filter_season_title(season: String) -> String
+    var filter_btn_apply: String { get }
+    var filter_btn_cancel: String { get }
+    var filter_btn_clear: String { get }
 }
 
 struct DefaultLocalization: Localization {
@@ -116,6 +127,9 @@ struct DefaultLocalization: Localization {
         return self.customLocalizedString("empty_list_description")
     }
     
+    var no_data: String {
+        return self.customLocalizedString("no_data")
+    }
     // MARK: - Character Detail View
     func cdv_name_and_age(name: String, age: String) -> String {
         let format = self.customLocalizedString("cdv_name_and_age")
@@ -181,6 +195,45 @@ struct DefaultLocalization: Localization {
     
     var settings_select_language: String {
         return self.customLocalizedString("settings_select_language")
+    }
+    
+    // MARK: - Filter View
+    var filter_title_header: String {
+        return self.customLocalizedString("filter_title_header")
+    }
+    
+    var filter_name_hint: String {
+        return self.customLocalizedString("filter_name_hint")
+    }
+    
+    var filter_status_header: String {
+        return self.customLocalizedString("filter_status_header")
+    }
+    
+    func filter_status_value(status: String) -> String {
+        let format = self.customLocalizedString("filter_status_value")
+        return String(format: format, status)
+    }
+    
+    var filter_season_header: String {
+        return self.customLocalizedString("filter_season_header")
+    }
+    
+    func filter_season_title(season: String) -> String {
+        let format = self.customLocalizedString("filter_season_title")
+        return String(format: format, season)
+    }
+    
+    var filter_btn_apply: String {
+        return self.customLocalizedString("filter_btn_apply")
+    }
+    
+    var filter_btn_cancel: String {
+        return self.customLocalizedString("filrter_btn_cancel")
+    }
+    
+    var filter_btn_clear: String {
+        return self.customLocalizedString("filter_btn_clear")
     }
 }
 

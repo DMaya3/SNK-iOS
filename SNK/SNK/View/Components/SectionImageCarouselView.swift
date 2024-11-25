@@ -64,7 +64,7 @@ struct SectionImageCarouselView: View {
                                     .padding(.all, 15)
                             }
                         } else {
-                            Text("No data")
+                            Text(self.localization.no_data)
                                 .font(.body.bold())
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(maxWidth: .infinity, alignment: .center)

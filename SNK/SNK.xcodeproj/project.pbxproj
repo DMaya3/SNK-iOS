@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0BBE352CF498710014C968 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BBE342CF4986E0014C968 /* FilterView.swift */; };
+		BB0BBE372CF4ACF70014C968 /* SearchTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BBE362CF4ACF70014C968 /* SearchTextFieldView.swift */; };
 		BB3E067E2CF39E1000332F81 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */; };
 		BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */; };
 		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
@@ -61,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0BBE342CF4986E0014C968 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		BB0BBE362CF4ACF70014C968 /* SearchTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextFieldView.swift; sourceTree = "<group>"; };
 		BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		BBA8B0F82CEFB2FC00F3F506 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BB0BBE362CF4ACF70014C968 /* SearchTextFieldView.swift */,
 				BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */,
 				BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */,
 				BBCA93F32CF31F4B004312F9 /* SectionImageCarouselView.swift */,
@@ -180,6 +185,7 @@
 			children = (
 				BBB273122CF34AEE00DBFC21 /* EpisodesScreens */,
 				BBEB11402CF1CEE20048A65B /* CharactersScreens */,
+				BB0BBE342CF4986E0014C968 /* FilterView.swift */,
 				BBE6A95E2CEE72680006E7CC /* HomeView.swift */,
 				BBFBCCC62CF469BE004462D6 /* SettingsView.swift */,
 			);
@@ -438,6 +444,7 @@
 				BBE6A9B32CEE79280006E7CC /* CoreDataProvider.swift in Sources */,
 				BBE6A99F2CEE77EB0006E7CC /* Relatives+CoreDataClass.swift in Sources */,
 				BBE6A9AF2CEE78F60006E7CC /* Information+Transformer.swift in Sources */,
+				BB0BBE352CF498710014C968 /* FilterView.swift in Sources */,
 				BBE6A9BB2CEE7AB00006E7CC /* Root+CoreDataClass.swift in Sources */,
 				BBE6A9BC2CEE7AB00006E7CC /* Root+CoreDataProperties.swift in Sources */,
 				BBEB11452CF1D1910048A65B /* ImageView.swift in Sources */,
@@ -448,6 +455,7 @@
 				BBE6A9A32CEE77EB0006E7CC /* RootEpisodes+CoreDataClass.swift in Sources */,
 				BBE6A9A42CEE77EB0006E7CC /* RootEpisodes+CoreDataProperties.swift in Sources */,
 				BBE6A9612CEE72680006E7CC /* HomeView.swift in Sources */,
+				BB0BBE372CF4ACF70014C968 /* SearchTextFieldView.swift in Sources */,
 				BBE39D4C2CF37CDE00B6F69B /* EpisodeDetailView.swift in Sources */,
 				BBE6A9622CEE72680006E7CC /* SNKApp.swift in Sources */,
 				BBCAF3ED2CEF285A0004AB37 /* APICall.swift in Sources */,
