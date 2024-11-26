@@ -113,6 +113,7 @@ struct CharactersListView: View {
                     .padding(.trailing, 25)
                 }
             }
+            .accessibilityLabel(self.localization.accessibility_filter_btn)
             
             if isMenuOpen {
                 HStack {

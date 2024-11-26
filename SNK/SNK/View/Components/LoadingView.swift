@@ -15,6 +15,7 @@ struct LoadingView: View {
                 .scaledToFill()
                 .frame(height: 900)
         }
+        .accessibilityHidden(true)
     }
 }
 
