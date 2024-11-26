@@ -68,3 +68,7 @@ https://github.com/user-attachments/assets/ab6eea06-41dc-4605-963b-81747665855e
 Both characters list and episodes list has a floating button bottom trailing which navigates to Filter view. This view allows the user search by name and status (in case the user wants filter characters) or by name and seasons (in case the user wants filter episodes). The filter button in both lists change the image and action when is filtered. When is filtered, the same floating button clean filters and it get back the original list.
 
 https://github.com/user-attachments/assets/9e3435c2-3e40-4ae6-806e-0fd9b4911c72
+
+## Test and Accessibility
+
+Futher more, the app has Unit Test and integration test to check the service calls and all funcionality of ViewModel work correctly. I´ve done accessibility of all the app too. 
