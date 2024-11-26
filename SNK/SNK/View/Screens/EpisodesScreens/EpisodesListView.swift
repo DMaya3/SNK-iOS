@@ -33,7 +33,8 @@ struct EpisodesListView: View {
                 EmptyListView(isFiltered: $isFiltered)
             } else {
                 VStack {
-                    TopBarView(isMenuOpen: $isMenuOpen, textHeader: self.localization.title_episodes)
+                    TopBarView(isMenuOpen: $isMenuOpen,
+                               textHeader: self.localization.title_episodes)
                     ScrollView {
                         LazyVStack {
                             ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
@@ -73,9 +74,6 @@ struct EpisodesListView: View {
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
-                .background(LinearGradient(colors: [Color(.backgroundOne), Color(.backgroundTwo)],
-                                           startPoint: .topLeading,
-                                           endPoint: .bottomTrailing))
                 .sheet(isPresented: $isPresented, content: {
                     FilterView(isCharacter: false) { name, _, seasons in
                         self.name = name
@@ -84,6 +82,7 @@ struct EpisodesListView: View {
                         self.episodes = self.viewModel.filterEpisodes(filterName: self.name, filterSeason: self.seasons)
                     }
                 })
+                .navigationBarBackButtonHidden()
             }
             
             VStack {
@@ -107,6 +106,7 @@ struct EpisodesListView: View {
                     .padding(.trailing, 35)
                 }
             }
+            .accessibilityLabel(self.localization.accessibility_filter_btn)
             
             if self.isMenuOpen {
                 HStack {
@@ -116,7 +116,9 @@ struct EpisodesListView: View {
                 .transition(.move(edge: .trailing))
             }
         }
-        .navigationBarBackButtonHidden()
+        .background(LinearGradient(colors: [Color(.backgroundOne), Color(.backgroundTwo)],
+                                   startPoint: .topLeading,
+                                   endPoint: .bottomTrailing))
         .gesture(
             DragGesture()
                 .onEnded { value in

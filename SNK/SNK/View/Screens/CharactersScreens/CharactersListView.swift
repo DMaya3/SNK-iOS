@@ -73,6 +73,7 @@ struct CharactersListView: View {
                                             }
                                         }
                                         .padding()
+                                        .accessibilityRemoveTraits(.isSelected)
                                     }
                                 }
                             }
