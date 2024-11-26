@@ -35,6 +35,7 @@ struct CharactersListView: View {
                 VStack {
                     TopBarView(isMenuOpen: $isMenuOpen,
                                textHeader: self.localization.title_characters)
+                    .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
                             ForEach(self.characters, id: \.self) { item in
@@ -114,7 +115,8 @@ struct CharactersListView: View {
                     .padding(.trailing, 25)
                 }
             }
-            .accessibilityLabel(self.localization.accessibility_filter_btn)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel(self.isFiltered ? self.localization.accessibility_clear_btn : self.localization.accessibility_filter_btn)
             
             if isMenuOpen {
                 HStack {
