@@ -25,6 +25,7 @@ struct FilterView: View {
                             .font(.title3)
                             .fontWeight(.bold)
                             .padding(.trailing, 100)
+                            .accessibilityAddTraits(.isHeader)
                         Button {
                             self.dismiss.callAsFunction()
                         } label: {
@@ -76,6 +77,7 @@ struct FilterView: View {
                             .opacity(0.3)
                     }
                     .padding(.bottom, 8)
+                    .accessibilityHidden(true)
                     
                     HStack {
                         Button {
