@@ -95,6 +95,7 @@ struct EpisodeDetailView: View {
                         .font(.title3)
                 }
                 .padding()
+                .accessibilityLabel(self.localization.accessibility_toolbar_back_btn)
             }
             
             ToolbarItem(placement: .topBarTrailing) {
@@ -106,6 +107,7 @@ struct EpisodeDetailView: View {
                         .font(.title3)
                 }
                 .padding()
+                .accessibilityLabel(self.localization.accessibility_toolbar_home)
             }
         }
     }

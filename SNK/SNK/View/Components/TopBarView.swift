@@ -38,6 +38,7 @@ struct TopBarView: View {
             }
             .padding()
             .accessibilityElement(children: .combine)
+            .accessibilityLabel(self.localization.accessibility_toolbar_back_btn)
             .accessibilityAddTraits(.isButton)
             Spacer()
             
@@ -46,6 +47,8 @@ struct TopBarView: View {
                 .fontWeight(.semibold)
                 .frame(alignment: .center)
                 .padding()
+                .accessibilityAddTraits(.isHeader)
+                .accessibilitySortPriority(3)
             
             Spacer()
             
@@ -60,7 +63,9 @@ struct TopBarView: View {
             })
             .padding()
             .accessibilityElement(children: .combine)
+            .accessibilityLabel(self.localization.accessibility_toolbar_menu_btn)
             .accessibilityAddTraits(.isButton)
+            .accessibilitySortPriority(2)
         }
     }
 }

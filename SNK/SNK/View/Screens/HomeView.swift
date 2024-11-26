@@ -30,6 +30,7 @@ struct HomeView: View {
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(alignment: .center)
                                 .accessibilityAddTraits(.isHeader)
+                                .accessibilitySortPriority(3)
                             
                             Text(self.localization.description_home_view)
                                 .font(.subheadline)

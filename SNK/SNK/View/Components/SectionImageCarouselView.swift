@@ -38,6 +38,7 @@ struct SectionImageCarouselView: View {
                 .foregroundStyle(self.colorByColorScheme)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
+                .accessibilityAddTraits(.isHeader)
         }
             TabView(selection: $currentIndex) {
                 ForEach(self.newArray.indices, id: \.self) { index in
@@ -63,12 +64,27 @@ struct SectionImageCarouselView: View {
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .padding(.all, 15)
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityLabel(name)
+                            .accessibilityHint(self.localization.accessibility_swipe_carousel)
+                            .tag(index)
+                            .accessibilityAction {
+                                if index < self.newArray.count - 1 {
+                                    currentIndex = index + 1
+                                }
+                            }
+                            .accessibilityAction {
+                                if index > 0 {
+                                    currentIndex = index - 1
+                                }
+                            }
                         } else {
                             Text(self.localization.no_data)
                                 .font(.body.bold())
                                 .foregroundStyle(self.colorByColorScheme)
                                 .frame(maxWidth: .infinity, alignment: .center)
                                 .padding()
+                                .accessibilityElement()
                         }
                     }
                 }
