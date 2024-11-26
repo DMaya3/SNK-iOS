@@ -73,7 +73,7 @@ struct CharacterDetailView: View {
                 if let relatives = self.character.relatives, !relatives.isEmpty {
                     ForEach(relatives, id: \.self) { relative in
                         if let family = relative.family, !family.isEmpty, let members = relative.members, !members.isEmpty {
-                            SectionImageCarouselView(nameSection: self.localization.cdv_section_family(family: family), members: members, characters: self.characters)
+                            SectionImageCarouselView(nameSection: self.localization.cdv_section_family(family: family), members: members, characters: self.characters, episodes: self.episodes)
                         }
                     }
                 }
