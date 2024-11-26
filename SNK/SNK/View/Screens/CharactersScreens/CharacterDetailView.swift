@@ -52,6 +52,7 @@ struct CharacterDetailView: View {
                                     .foregroundStyle(self.colorByColorScheme)
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .accessibilityElement(children: .combine)
                         }
                     } else {
                         SectionView(nameSection: self.localization.cdv_alias, stringArray: alias)
@@ -98,6 +99,7 @@ struct CharacterDetailView: View {
                         .font(.title3)
                 }
                 .padding()
+                .accessibilityLabel(self.localization.accessibility_toolbar_back_btn)
             }
             
             ToolbarItem(placement: .topBarTrailing) {
@@ -109,6 +111,7 @@ struct CharacterDetailView: View {
                         .font(.title3)
                 }
                 .padding()
+                .accessibilityLabel(self.localization.accessibility_toolbar_home)
             }
         }
     }
