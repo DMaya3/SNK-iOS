@@ -28,12 +28,14 @@ struct SectionView: View {
             .foregroundStyle(self.colorByColorScheme)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
+            .accessibilityAddTraits(.isHeader)
         ForEach(self.stringArray, id: \.self) { string in
             if string != "" {
                 HStack {
                     Image(systemName: "dot.circle")
                         .tint(self.colorByColorScheme)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))
+                        .accessibilityHidden(true)
                     Text(string)
                         .foregroundStyle(self.colorByColorScheme)
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 3, trailing: 0))

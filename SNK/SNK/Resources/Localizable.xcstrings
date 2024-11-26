@@ -69,7 +69,7 @@
         }
       }
     },
-    "Accessibility_toolbar_home" : {
+    "accessibility_toolbar_home" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
