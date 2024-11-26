@@ -33,6 +33,8 @@ struct CharactersListView: View {
                 EmptyListView(isFiltered: $isFiltered)
             } else {
                 VStack {
+                    TopBarView(isMenuOpen: $isMenuOpen,
+                               textHeader: self.localization.title_characters)
                     ScrollView {
                         LazyVStack {
                             ForEach(self.characters, id: \.self) { item in
@@ -88,36 +90,6 @@ struct CharactersListView: View {
                     }
                 })
                 .navigationBarBackButtonHidden()
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            self.dismiss.callAsFunction()
-                        }) {
-                            Image(systemName: "chevron.backward")
-                                .foregroundStyle(self.colorByColorScheme)
-                                .font(.title3)
-                        }
-                        .padding()
-                    }
-                    ToolbarItem(placement: .principal) {
-                        Text(self.localization.title_characters)
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            withAnimation {
-                                self.isMenuOpen.toggle()
-                            }
-                        }, label: {
-                            Image(systemName: "list.bullet")
-                                .imageScale(.large)
-                                .tint(self.colorByColorScheme)
-                        })
-                        .padding()
-                    }
-                }
-                
             }
             
             VStack {
@@ -141,6 +113,7 @@ struct CharactersListView: View {
                     .padding(.trailing, 25)
                 }
             }
+            .accessibilityLabel(self.localization.accessibility_filter_btn)
             
             if isMenuOpen {
                 HStack {

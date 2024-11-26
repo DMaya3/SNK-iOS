@@ -12,6 +12,7 @@
 		BB0BBE392CF4B3F70014C968 /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BBE382CF4B3F70014C968 /* FilterButtonView.swift */; };
 		BB3E067E2CF39E1000332F81 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */; };
 		BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */; };
+		BB456ED32CF5D5FB00B0CCD4 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB456ED22CF5D5FB00B0CCD4 /* TopBarView.swift */; };
 		BB54228D2CF4DFF300D2D9C5 /* MockEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */; };
 		BB54228F2CF4E00900D2D9C5 /* MockRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */; };
 		BB5422912CF4E01700D2D9C5 /* MockInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422902CF4E01700D2D9C5 /* MockInformation.swift */; };
@@ -85,6 +86,7 @@
 		BB0BBE382CF4B3F70014C968 /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		BB3E067D2CF39E0E00332F81 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		BB456ED22CF5D5FB00B0CCD4 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		BB54227F2CF4DFD200D2D9C5 /* SNKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodes.swift; sourceTree = "<group>"; };
 		BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoot.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		BBA8B0F82CEFB2FC00F3F506 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BB456ED22CF5D5FB00B0CCD4 /* TopBarView.swift */,
 				BB0BBE382CF4B3F70014C968 /* FilterButtonView.swift */,
 				BB0BBE362CF4ACF70014C968 /* SearchTextFieldView.swift */,
 				BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */,
@@ -560,6 +563,7 @@
 				BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */,
 				BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */,
 				BBE6A9B32CEE79280006E7CC /* CoreDataProvider.swift in Sources */,
+				BB456ED32CF5D5FB00B0CCD4 /* TopBarView.swift in Sources */,
 				BBE6A99F2CEE77EB0006E7CC /* Relatives+CoreDataClass.swift in Sources */,
 				BBE6A9AF2CEE78F60006E7CC /* Information+Transformer.swift in Sources */,
 				BB0BBE352CF498710014C968 /* FilterView.swift in Sources */,

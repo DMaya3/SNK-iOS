@@ -33,6 +33,7 @@ struct EpisodesListView: View {
                 EmptyListView(isFiltered: $isFiltered)
             } else {
                 VStack {
+                    TopBarView(isMenuOpen: $isMenuOpen, textHeader: self.localization.title_episodes)
                     ScrollView {
                         LazyVStack {
                             ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
@@ -83,35 +84,6 @@ struct EpisodesListView: View {
                         self.episodes = self.viewModel.filterEpisodes(filterName: self.name, filterSeason: self.seasons)
                     }
                 })
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            self.dismiss.callAsFunction()
-                        }) {
-                            Image(systemName: "chevron.backward")
-                                .foregroundStyle(self.colorByColorScheme)
-                                .font(.title3)
-                        }
-                        .padding()
-                    }
-                    ToolbarItem(placement: .principal) {
-                        Text(self.localization.title_episodes)
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            withAnimation {
-                                self.isMenuOpen.toggle()
-                            }
-                        }, label: {
-                            Image(systemName: "list.bullet")
-                                .imageScale(.large)
-                                .tint(self.colorByColorScheme)
-                        })
-                        .padding()
-                    }
-                }
             }
             
             VStack {
