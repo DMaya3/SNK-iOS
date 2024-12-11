@@ -2,7 +2,7 @@
 //  Characters+CoreDataClass.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 11/12/2024.
 //
 //
 
