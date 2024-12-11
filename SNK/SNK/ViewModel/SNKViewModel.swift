@@ -111,7 +111,6 @@ extension SNKViewModel {
         do {
             if let newCharacter = try self.coreDataProvider.saveCharacterEntity(character: character) {
                 self.characters.append(newCharacter)
-                try CoreDataProvider.preview.saveContext()
                 print("Character \(character.name ?? "") saved successfully.")
             }
         } catch let error as NSError {
@@ -123,7 +122,6 @@ extension SNKViewModel {
         do {
             let newEpisode = try self.coreDataProvider.saveEpisodeEntity(episode: episode)
             self.episodes.append(newEpisode)
-            try CoreDataProvider.preview.saveContext()
             print("Episode \(episode.episode ?? "") saved successfully")
         } catch let error as NSError {
             print("Error \(error.code): \(error.localizedDescription) - \(error.userInfo)")
