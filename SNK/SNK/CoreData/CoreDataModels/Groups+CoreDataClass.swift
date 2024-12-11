@@ -2,7 +2,7 @@
 //  Groups+CoreDataClass.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 11/12/2024.
 //
 //
 
@@ -48,3 +48,4 @@ public class Groups: NSManagedObject, NSSecureCoding, Decodable {
         self.sub_groups = try container.decode([String].self, forKey: .sub_groups)
     }
 }
+

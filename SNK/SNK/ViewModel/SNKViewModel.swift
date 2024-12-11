@@ -18,6 +18,7 @@ class SNKViewModel: ObservableObject {
     private var pagesEpisodes = 5
     var root: Root = Root(entity: NSEntityDescription.entity(forEntityName: "Root", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     var rootEpisodes: RootEpisodes = RootEpisodes(entity: NSEntityDescription.entity(forEntityName: "RootEpisodes", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
+    var isLoading: Bool = false
     
     var charactersUseCase: CharactersUseCase {
         DefaultCharatersUseCase()
@@ -67,12 +68,14 @@ private extension SNKViewModel {
 // MARK: - Fetch Data
 extension SNKViewModel {
     func charactersPublisher(pages: Int) async -> AnyPublisher<Root, Error> {
+        self.isLoading = true
         return await self.charactersUseCase.fetchDataCharacters(pages: pages)
     }
     
     func suscribeCharacters(page: Int) async {
         await charactersPublisher(pages: page)
             .sink { [weak self] completion in
+                self?.isLoading = false
                 self?.handleCompletion(completion)
             } receiveValue: { [weak self] root in
                 self?.root = root
@@ -81,17 +84,20 @@ extension SNKViewModel {
                         self?.fillCharacters(character: character)
                     }
                 }
+                self?.isLoading = false
             }
             .store(in: &suscription)
     }
     
     func episodesPublisher(pages: Int) async -> AnyPublisher<RootEpisodes, Error> {
+        self.isLoading = true
         return await self.episodesUseCase.fetchDataEpisodes(pages: pages)
     }
     
     func suscribeEpisodes(page: Int) async {
         await episodesPublisher(pages: page)
             .sink { [weak self] completion in
+                self?.isLoading = false
                 self?.handleCompletion(completion)
             } receiveValue: { [weak self] rootEpisodes in
                 self?.rootEpisodes = rootEpisodes
@@ -100,6 +106,7 @@ extension SNKViewModel {
                         self?.fillEpisodes(episode: episode)
                     }
                 }
+                self?.isLoading = false
             }
             .store(in: &suscription)
     }
