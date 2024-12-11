@@ -16,7 +16,7 @@ struct SNKApp: App {
         ValueTransformer.setValueTransformer(InformationTransformer(), forName: NSValueTransformerName("InformationTransformer"))
         ValueTransformer.setValueTransformer(RelativesArrayTransformer(), forName: NSValueTransformerName("RelativesArrayTransformer"))
     }
-    @StateObject private var viewModel = SNKViewModel()
+    @StateObject private var viewModel = SNKViewModel() // EL BETIS ES UNA MIERDA
     @StateObject private var colorSchemeManager = ColorSchemeManager()
     @StateObject private var languageSettings = LanguageSettings()
     var body: some Scene {
