@@ -14,8 +14,8 @@ class SNKViewModel: ObservableObject {
     @Published var episodes: [Episodes] = []
     private var suscription = Set<AnyCancellable>()
     private var coreDataProvider = CoreDataProvider()
-    private var pagesCharacters = 11
-    private var pagesEpisodes = 5
+    var page: Int = 0
+    var pages: [Int] = []
     var isLoading: Bool = false
     var root: Root = Root(entity: NSEntityDescription.entity(forEntityName: "Root", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     var rootEpisodes: RootEpisodes = RootEpisodes(entity: NSEntityDescription.entity(forEntityName: "RootEpisodes", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
@@ -36,18 +36,18 @@ class SNKViewModel: ObservableObject {
     }
     
     func fetchCharacters() async {
-        if !self.coreDataProvider.checkIsCharacterExisting(characters: self.characters) {
-            for page in 1...self.pagesCharacters {
-                await self.suscribeCharacters(page: page)
-            }
+        self.page += 1
+        if !self.pages.contains(self.page) {
+            self.pages.append(self.page)
+            await self.suscribeCharacters(page: self.page)
         }
     }
     
     func fetchEpisodes() async {
-        if !self.coreDataProvider.checkIsEpisodeExisting(episodes: self.episodes) {
-            for page in 1...self.pagesEpisodes {
-                await self.suscribeEpisodes(page: page)
-            }
+        self.page += 1
+        if !self.pages.contains(self.page) {
+            self.pages.append(self.page)
+            await self.suscribeEpisodes(page: self.page)
         }
     }
 }
@@ -80,7 +80,7 @@ extension SNKViewModel {
             } receiveValue: { [weak self] root in
                 self?.isLoading = false
                 self?.root = root
-                if let results = self?.root.results {
+                if let results = self?.root.results, !(self?.coreDataProvider.checkIsCharacterExisting(characters: results) ?? false) {
                     for character in results {
                         self?.fillCharacters(character: character)
                     }
@@ -102,7 +102,7 @@ extension SNKViewModel {
             } receiveValue: { [weak self] rootEpisodes in
                 self?.isLoading = false
                 self?.rootEpisodes = rootEpisodes
-                if let results = self?.rootEpisodes.results {
+                if let results = self?.rootEpisodes.results, !(self?.coreDataProvider.checkIsEpisodeExisting(episodes: results) ?? false) {
                     for episode in results {
                         self?.fillEpisodes(episode: episode)
                     }

@@ -80,6 +80,12 @@ struct CharactersListView: View {
                             }
                         }
                     }
+                    // This works but it doesn´t refresh the screen
+                    .onAppear {
+                        Task {
+                            await self.viewModel.fetchCharacters()
+                        }
+                    }
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
@@ -175,5 +181,12 @@ extension CharactersListView {
             return Image(systemName: "questionmark.circle.dashed")
                 .foregroundStyle(.gray)
         }
+    }
+    
+    private func isAtBottom(proxy: GeometryProxy) -> Bool {
+        let contentHeight = proxy.size.height
+        let scrollOffset = proxy.frame(in: .global).maxY
+        let screenHeight = UIScreen.main.bounds.height
+        return scrollOffset < screenHeight + contentHeight
     }
 }
