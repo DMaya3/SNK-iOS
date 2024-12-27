@@ -75,19 +75,20 @@ struct CharactersListView: View {
                                         }
                                         .padding()
                                         .accessibilityRemoveTraits(.isSelected)
+                                        
+                                        if item == self.viewModel.characters.last && item.id < 201 {
+                                            ProgressView()
+                                                .onAppear {
+                                                    Task {
+                                                        await self.viewModel.fetchCharacters()
+                                                    }
+                                                }
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                    // I need to find do this with scroll ending
-                    Button("Load more...") {
-                        Task {
-                            await self.viewModel.fetchCharacters()
-                        }
-                    }
-                    .backgroundStyle(Color(.filter))
-                    .foregroundStyle(self.colorByColorScheme)
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
