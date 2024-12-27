@@ -38,7 +38,7 @@ struct EpisodesListView: View {
                     .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
-                            ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
+                            ForEach(self.viewModel.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
                                 NavigationLink {
                                     EpisodeDetailView(episode: item, episodes: self.episodes, characters: self.characters)
                                 } label: {
@@ -67,6 +67,15 @@ struct EpisodesListView: View {
                                             }
                                         }
                                         .padding()
+                                        
+                                        if item == self.viewModel.episodes.last && item.id < 88 {
+                                            ProgressView()
+                                                .onAppear {
+                                                    Task {
+                                                        await self.viewModel.fetchEpisodes()
+                                                    }
+                                                }
+                                        }
                                     }
                                 }
                             }

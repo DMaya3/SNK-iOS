@@ -14,8 +14,10 @@ class SNKViewModel: ObservableObject {
     @Published var episodes: [Episodes] = []
     private var suscription = Set<AnyCancellable>()
     private var coreDataProvider = CoreDataProvider()
-    var page: Int = 0
-    var pages: [Int] = []
+    var characterPage: Int = 0
+    var episodePage: Int = 0
+    var characterPages: [Int] = []
+    var episodePages: [Int] = []
     var isLoading: Bool = false
     var root: Root = Root(entity: NSEntityDescription.entity(forEntityName: "Root", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     var rootEpisodes: RootEpisodes = RootEpisodes(entity: NSEntityDescription.entity(forEntityName: "RootEpisodes", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
@@ -36,18 +38,18 @@ class SNKViewModel: ObservableObject {
     }
     
     func fetchCharacters() async {
-        self.page += 1
-        if !self.pages.contains(self.page) {
-            self.pages.append(self.page)
-            await self.suscribeCharacters(page: self.page)
+        self.characterPage += 1
+        if !self.characterPages.contains(self.characterPage) {
+            self.characterPages.append(self.characterPage)
+            await self.suscribeCharacters(page: self.characterPage)
         }
     }
     
     func fetchEpisodes() async {
-        self.page += 1
-        if !self.pages.contains(self.page) {
-            self.pages.append(self.page)
-            await self.suscribeEpisodes(page: self.page)
+        self.episodePage += 1
+        if !self.episodePages.contains(self.episodePage) {
+            self.episodePages.append(self.episodePage)
+            await self.suscribeEpisodes(page: self.episodePage)
         }
     }
 }
