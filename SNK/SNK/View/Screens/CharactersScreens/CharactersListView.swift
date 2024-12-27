@@ -38,7 +38,7 @@ struct CharactersListView: View {
                     .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
-                            ForEach(self.characters, id: \.self) { item in
+                            ForEach(self.viewModel.characters, id: \.self) { item in
                                 NavigationLink {
                                     CharacterDetailView(character: item, characters: self.characters, episodes: self.episodes)
                                 } label: {
@@ -80,12 +80,14 @@ struct CharactersListView: View {
                             }
                         }
                     }
-                    // This works but it doesn´t refresh the screen
-                    .onAppear {
+                    // I need to find do this with scroll ending
+                    Button("Load more...") {
                         Task {
                             await self.viewModel.fetchCharacters()
                         }
                     }
+                    .backgroundStyle(Color(.filter))
+                    .foregroundStyle(self.colorByColorScheme)
                 }
                 .disabled(self.isMenuOpen)
                 .blur(radius: self.isMenuOpen ? 3 : 0)
