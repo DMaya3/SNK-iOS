@@ -19,7 +19,7 @@ struct CharactersListView: View {
     @State private var status: Status = .none
     @State private var characters: [Characters]
     private var episodes: [Episodes]
-    private var originalCharacters: [Characters]
+    @State private var originalCharacters: [Characters]
     
     init(characters: [Characters], episodes: [Episodes]) {
         self.characters = characters
@@ -38,7 +38,7 @@ struct CharactersListView: View {
                     .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
-                            ForEach(self.viewModel.characters, id: \.self) { item in
+                            ForEach(self.characters, id: \.self) { item in
                                 NavigationLink {
                                     CharacterDetailView(character: item, characters: self.characters, episodes: self.episodes)
                                 } label: {
@@ -76,12 +76,15 @@ struct CharactersListView: View {
                                         .padding()
                                         .accessibilityRemoveTraits(.isSelected)
                                         
-                                        if item == self.viewModel.characters.last && item.id < 201 {
+                                        // Check this code. Left something to finish
+                                        if item == self.characters.last && item.id < 201 {
                                             ProgressView()
                                                 .onAppear {
                                                     Task {
                                                         await self.viewModel.fetchCharacters()
                                                     }
+                                                    self.characters = self.viewModel.characters
+                                                    self.originalCharacters = self.viewModel.characters
                                                 }
                                         }
                                     }
@@ -184,12 +187,5 @@ extension CharactersListView {
             return Image(systemName: "questionmark.circle.dashed")
                 .foregroundStyle(.gray)
         }
-    }
-    
-    private func isAtBottom(proxy: GeometryProxy) -> Bool {
-        let contentHeight = proxy.size.height
-        let scrollOffset = proxy.frame(in: .global).maxY
-        let screenHeight = UIScreen.main.bounds.height
-        return scrollOffset < screenHeight + contentHeight
     }
 }
