@@ -19,7 +19,7 @@ struct EpisodesListView: View {
     @State private var seasons: Seasons = .none
     @State private var episodes: [Episodes]
     private var characters: [Characters]
-    private var originalEpisodes: [Episodes]
+    @State private var originalEpisodes: [Episodes]
     
     init(episodes: [Episodes], characters: [Characters]) {
         self.episodes = episodes
@@ -38,7 +38,7 @@ struct EpisodesListView: View {
                     .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
-                            ForEach(self.viewModel.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
+                            ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
                                 NavigationLink {
                                     EpisodeDetailView(episode: item, episodes: self.episodes, characters: self.characters)
                                 } label: {
@@ -68,13 +68,21 @@ struct EpisodesListView: View {
                                         }
                                         .padding()
                                         
-                                        if item == self.viewModel.episodes.last && item.id < 88 {
-                                            ProgressView()
-                                                .onAppear {
-                                                    Task {
-                                                        await self.viewModel.fetchEpisodes()
-                                                    }
+                                        if item == self.episodes.last && item.id < 88 && !self.isFiltered {
+                                            Button {
+                                                Task {
+                                                    await self.viewModel.fetchEpisodes()
                                                 }
+                                                self.episodes = self.viewModel.episodes
+                                                self.originalEpisodes = self.viewModel.episodes
+                                            } label: {
+                                                HStack {
+                                                    Image(systemName: "arrow.2.circlepath")
+                                                    Text(self.localization.load_more_data)
+                                                }
+                                            }
+                                            .font(.title3)
+                                            .foregroundStyle(self.colorByColorScheme)
                                         }
                                     }
                                 }
