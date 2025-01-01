@@ -40,7 +40,7 @@ struct CharactersListView: View {
                         LazyVStack {
                             ForEach(self.characters, id: \.self) { item in
                                 NavigationLink {
-                                    CharacterDetailView(character: item, characters: self.characters, episodes: self.episodes)
+                                    CharacterDetailView(character: item, characters: self.originalCharacters, episodes: self.episodes)
                                 } label: {
                                     VStack {
                                         HStack {
