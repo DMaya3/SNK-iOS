@@ -14,8 +14,11 @@ class SNKViewModel: ObservableObject {
     @Published var episodes: [Episodes] = []
     private var suscription = Set<AnyCancellable>()
     private var coreDataProvider = CoreDataProvider()
-    private var pagesCharacters = 11
-    private var pagesEpisodes = 5
+    var characterPage: Int = 0
+    var episodePage: Int = 0
+    var characterPages: [Int] = []
+    var episodePages: [Int] = []
+    var isLoading: Bool = false
     var root: Root = Root(entity: NSEntityDescription.entity(forEntityName: "Root", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     var rootEpisodes: RootEpisodes = RootEpisodes(entity: NSEntityDescription.entity(forEntityName: "RootEpisodes", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     
@@ -35,18 +38,18 @@ class SNKViewModel: ObservableObject {
     }
     
     func fetchCharacters() async {
-        if !self.coreDataProvider.checkIsCharacterExisting(characters: self.characters) {
-            for page in 1...self.pagesCharacters {
-                await self.suscribeCharacters(page: page)
-            }
+        self.characterPage += 1
+        if !self.characterPages.contains(self.characterPage) {
+            self.characterPages.append(self.characterPage)
+            await self.suscribeCharacters(page: self.characterPage)
         }
     }
     
     func fetchEpisodes() async {
-        if !self.coreDataProvider.checkIsEpisodeExisting(episodes: self.episodes) {
-            for page in 1...self.pagesEpisodes {
-                await self.suscribeEpisodes(page: page)
-            }
+        self.episodePage += 1
+        if !self.episodePages.contains(self.episodePage) {
+            self.episodePages.append(self.episodePage)
+            await self.suscribeEpisodes(page: self.episodePage)
         }
     }
 }
@@ -67,16 +70,19 @@ private extension SNKViewModel {
 // MARK: - Fetch Data
 extension SNKViewModel {
     func charactersPublisher(pages: Int) async -> AnyPublisher<Root, Error> {
+        self.isLoading = true
         return await self.charactersUseCase.fetchDataCharacters(pages: pages)
     }
     
     func suscribeCharacters(page: Int) async {
         await charactersPublisher(pages: page)
             .sink { [weak self] completion in
+                self?.isLoading = false
                 self?.handleCompletion(completion)
             } receiveValue: { [weak self] root in
+                self?.isLoading = false
                 self?.root = root
-                if let results = self?.root.results {
+                if let results = self?.root.results, !(self?.coreDataProvider.checkIsCharacterExisting(characters: results) ?? false) {
                     for character in results {
                         self?.fillCharacters(character: character)
                     }
@@ -86,16 +92,19 @@ extension SNKViewModel {
     }
     
     func episodesPublisher(pages: Int) async -> AnyPublisher<RootEpisodes, Error> {
+        self.isLoading = true
         return await self.episodesUseCase.fetchDataEpisodes(pages: pages)
     }
     
     func suscribeEpisodes(page: Int) async {
         await episodesPublisher(pages: page)
             .sink { [weak self] completion in
+                self?.isLoading = false
                 self?.handleCompletion(completion)
             } receiveValue: { [weak self] rootEpisodes in
+                self?.isLoading = false
                 self?.rootEpisodes = rootEpisodes
-                if let results = self?.rootEpisodes.results {
+                if let results = self?.rootEpisodes.results, !(self?.coreDataProvider.checkIsEpisodeExisting(episodes: results) ?? false) {
                     for episode in results {
                         self?.fillEpisodes(episode: episode)
                     }
@@ -111,7 +120,6 @@ extension SNKViewModel {
         do {
             if let newCharacter = try self.coreDataProvider.saveCharacterEntity(character: character) {
                 self.characters.append(newCharacter)
-                try CoreDataProvider.preview.saveContext()
                 print("Character \(character.name ?? "") saved successfully.")
             }
         } catch let error as NSError {
@@ -123,7 +131,6 @@ extension SNKViewModel {
         do {
             let newEpisode = try self.coreDataProvider.saveEpisodeEntity(episode: episode)
             self.episodes.append(newEpisode)
-            try CoreDataProvider.preview.saveContext()
             print("Episode \(episode.episode ?? "") saved successfully")
         } catch let error as NSError {
             print("Error \(error.code): \(error.localizedDescription) - \(error.userInfo)")

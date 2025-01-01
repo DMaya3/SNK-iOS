@@ -27,6 +27,7 @@ protocol Localization {
     var title_episodes: String { get }
     var empty_list_description: String { get }
     var no_data: String { get }
+    var load_more_data: String { get }
     
     func cdv_name_and_age(name: String, age: String) -> String
     var cdv_alias: String { get }
@@ -137,6 +138,11 @@ struct DefaultLocalization: Localization {
     var no_data: String {
         return self.customLocalizedString("no_data")
     }
+    
+    var load_more_data: String {
+        return self.customLocalizedString("load_more_data")
+    }
+    
     // MARK: - Character Detail View
     func cdv_name_and_age(name: String, age: String) -> String {
         let format = self.customLocalizedString("cdv_name_and_age")

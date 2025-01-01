@@ -2,7 +2,7 @@
 //  Episodes+CoreDataProperties.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 11/12/2024.
 //
 //
 
@@ -22,9 +22,5 @@ extension Episodes {
     @NSManaged public var img: Data?
     @NSManaged public var name: String?
     @NSManaged public var rootEpisodes: RootEpisodes?
-
-}
-
-extension Episodes : Identifiable {
 
 }

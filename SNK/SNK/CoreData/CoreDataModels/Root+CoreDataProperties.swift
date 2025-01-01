@@ -2,7 +2,7 @@
 //  Root+CoreDataProperties.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 11/12/2024.
 //
 //
 
@@ -18,8 +18,8 @@ extension Root {
 
     @NSManaged public var info: Information?
     @NSManaged public var results: [Characters]?
-    @NSManaged public var information: Information?
     @NSManaged public var characters: Characters?
+    @NSManaged public var information: Information?
 
 }
 

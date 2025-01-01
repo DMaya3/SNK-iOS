@@ -15,6 +15,7 @@ struct SNKApp: App {
         ValueTransformer.setValueTransformer(GroupsArrayTransformer(), forName: NSValueTransformerName("GroupsArrayTransformer"))
         ValueTransformer.setValueTransformer(InformationTransformer(), forName: NSValueTransformerName("InformationTransformer"))
         ValueTransformer.setValueTransformer(RelativesArrayTransformer(), forName: NSValueTransformerName("RelativesArrayTransformer"))
+        ValueTransformer.setValueTransformer(StringArrayTransformer(), forName: NSValueTransformerName("StringArrayTransformer"))
     }
     @StateObject private var viewModel = SNKViewModel()
     @StateObject private var colorSchemeManager = ColorSchemeManager()

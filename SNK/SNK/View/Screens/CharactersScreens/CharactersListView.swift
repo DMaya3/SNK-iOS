@@ -19,7 +19,7 @@ struct CharactersListView: View {
     @State private var status: Status = .none
     @State private var characters: [Characters]
     private var episodes: [Episodes]
-    private var originalCharacters: [Characters]
+    @State private var originalCharacters: [Characters]
     
     init(characters: [Characters], episodes: [Episodes]) {
         self.characters = characters
@@ -75,6 +75,23 @@ struct CharactersListView: View {
                                         }
                                         .padding()
                                         .accessibilityRemoveTraits(.isSelected)
+                                        
+                                        if item == self.characters.last && item.id < 201 && !self.isFiltered {
+                                            Button {
+                                                Task {
+                                                    await self.viewModel.fetchCharacters()
+                                                }
+                                                self.characters = self.viewModel.characters
+                                                self.originalCharacters = self.viewModel.characters
+                                            } label: {
+                                                HStack {
+                                                    Image(systemName: "arrow.2.circlepath")
+                                                    Text(self.localization.load_more_data)
+                                                }
+                                            }
+                                            .font(.title3)
+                                            .foregroundStyle(self.colorByColorScheme)
+                                        }
                                     }
                                 }
                             }

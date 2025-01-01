@@ -2,7 +2,7 @@
 //  Root+CoreDataClass.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 11/12/2024.
 //
 //
 
@@ -49,4 +49,3 @@ public class Root: NSManagedObject, NSSecureCoding, Decodable {
         self.results = try container.decode([Characters].self, forKey: .results)
     }
 }
-
