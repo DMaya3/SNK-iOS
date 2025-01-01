@@ -76,16 +76,21 @@ struct CharactersListView: View {
                                         .padding()
                                         .accessibilityRemoveTraits(.isSelected)
                                         
-                                        // Check this code. Left something to finish
-                                        if item == self.characters.last && item.id < 201 {
-                                            ProgressView()
-                                                .onAppear {
-                                                    Task {
-                                                        await self.viewModel.fetchCharacters()
-                                                    }
-                                                    self.characters = self.viewModel.characters
-                                                    self.originalCharacters = self.viewModel.characters
+                                        if item == self.characters.last && item.id < 201 && !self.isFiltered {
+                                            Button {
+                                                Task {
+                                                    await self.viewModel.fetchCharacters()
                                                 }
+                                                self.characters = self.viewModel.characters
+                                                self.originalCharacters = self.viewModel.characters
+                                            } label: {
+                                                HStack {
+                                                    Image(systemName: "arrow.2.circlepath")
+                                                    Text(self.localization.load_more_data)
+                                                }
+                                            }
+                                            .font(.title3)
+                                            .foregroundStyle(self.colorByColorScheme)
                                         }
                                     }
                                 }

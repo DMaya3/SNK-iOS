@@ -494,6 +494,23 @@
         }
       }
     },
+    "load_more_data" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load more"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargar más"
+          }
+        }
+      }
+    },
     "menu_home" : {
       "extractionState" : "manual",
       "localizations" : {
