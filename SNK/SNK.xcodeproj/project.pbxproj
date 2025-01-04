@@ -19,6 +19,13 @@
 		BB5422932CF4E02200D2D9C5 /* MockCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */; };
 		BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */; };
 		BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */; };
+		BB660E222D296E6E008DBEE3 /* Titans+Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E212D296E66008DBEE3 /* Titans+Transformer.swift */; };
+		BB660E462D29724B008DBEE3 /* Information+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E402D29724B008DBEE3 /* Information+CoreDataProperties.swift */; };
+		BB660E482D29724B008DBEE3 /* RootTitan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E422D29724B008DBEE3 /* RootTitan+CoreDataProperties.swift */; };
+		BB660E4A2D29724B008DBEE3 /* Titans+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E442D29724B008DBEE3 /* Titans+CoreDataProperties.swift */; };
+		BB660E4E2D29727E008DBEE3 /* Information+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E4B2D29727E008DBEE3 /* Information+CoreDataClass.swift */; };
+		BB660E4F2D29727E008DBEE3 /* RootTitan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E4C2D29727E008DBEE3 /* RootTitan+CoreDataClass.swift */; };
+		BB660E502D29727E008DBEE3 /* Titans+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB660E4D2D29727E008DBEE3 /* Titans+CoreDataClass.swift */; };
 		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
 		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
@@ -55,8 +62,6 @@
 		BBE6A9632CEE72680006E7CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95B2CEE72680006E7CC /* Preview Assets.xcassets */; };
 		BBE6A9642CEE72680006E7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE6A95D2CEE72680006E7CC /* Assets.xcassets */; };
 		BBE6A96B2CEE72E10006E7CC /* SnkDM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9692CEE72E10006E7CC /* SnkDM.xcdatamodeld */; };
-		BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A98F2CEE77EB0006E7CC /* Information+CoreDataClass.swift */; };
-		BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9902CEE77EB0006E7CC /* Information+CoreDataProperties.swift */; };
 		BBE6A9A72CEE786E0006E7CC /* Episodes+Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */; };
 		BBE6A9A92CEE789F0006E7CC /* Groups+Transfomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9A82CEE78980006E7CC /* Groups+Transfomer.swift */; };
 		BBE6A9AB2CEE78BB0006E7CC /* Relatives+Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6A9AA2CEE78B30006E7CC /* Relatives+Transformer.swift */; };
@@ -95,6 +100,13 @@
 		BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacters.swift; sourceTree = "<group>"; };
 		BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKRepositoryTest.swift; sourceTree = "<group>"; };
 		BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		BB660E212D296E66008DBEE3 /* Titans+Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Titans+Transformer.swift"; sourceTree = "<group>"; };
+		BB660E402D29724B008DBEE3 /* Information+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Information+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB660E422D29724B008DBEE3 /* RootTitan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootTitan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB660E442D29724B008DBEE3 /* Titans+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Titans+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB660E4B2D29727E008DBEE3 /* Information+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Information+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB660E4C2D29727E008DBEE3 /* RootTitan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootTitan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BB660E4D2D29727E008DBEE3 /* Titans+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Titans+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
@@ -132,8 +144,6 @@
 		BBE6A95E2CEE72680006E7CC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBE6A95F2CEE72680006E7CC /* SNKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKApp.swift; sourceTree = "<group>"; };
 		BBE6A96A2CEE72E10006E7CC /* SnkDM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnkDM.xcdatamodel; sourceTree = "<group>"; };
-		BBE6A98F2CEE77EB0006E7CC /* Information+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Information+CoreDataClass.swift"; sourceTree = "<group>"; };
-		BBE6A9902CEE77EB0006E7CC /* Information+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Information+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Episodes+Transformer.swift"; sourceTree = "<group>"; };
 		BBE6A9A82CEE78980006E7CC /* Groups+Transfomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Groups+Transfomer.swift"; sourceTree = "<group>"; };
 		BBE6A9AA2CEE78B30006E7CC /* Relatives+Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Relatives+Transformer.swift"; sourceTree = "<group>"; };
@@ -350,14 +360,18 @@
 				BBB5CA202D0A2DAB002073B2 /* Episodes+CoreDataProperties.swift */,
 				BBB5CA232D0A2DEC002073B2 /* Groups+CoreDataClass.swift */,
 				BBB5CA242D0A2DEC002073B2 /* Groups+CoreDataProperties.swift */,
-				BBE6A98F2CEE77EB0006E7CC /* Information+CoreDataClass.swift */,
-				BBE6A9902CEE77EB0006E7CC /* Information+CoreDataProperties.swift */,
+				BB660E4B2D29727E008DBEE3 /* Information+CoreDataClass.swift */,
+				BB660E402D29724B008DBEE3 /* Information+CoreDataProperties.swift */,
 				BBB5CA2B2D0A2E3E002073B2 /* Relatives+CoreDataClass.swift */,
 				BBB5CA2C2D0A2E3E002073B2 /* Relatives+CoreDataProperties.swift */,
 				BBB5CA2F2D0A2E84002073B2 /* Root+CoreDataClass.swift */,
 				BBB5CA302D0A2E84002073B2 /* Root+CoreDataProperties.swift */,
 				BBB5CA332D0A2EAA002073B2 /* RootEpisodes+CoreDataClass.swift */,
 				BBB5CA342D0A2EAA002073B2 /* RootEpisodes+CoreDataProperties.swift */,
+				BB660E4C2D29727E008DBEE3 /* RootTitan+CoreDataClass.swift */,
+				BB660E422D29724B008DBEE3 /* RootTitan+CoreDataProperties.swift */,
+				BB660E4D2D29727E008DBEE3 /* Titans+CoreDataClass.swift */,
+				BB660E442D29724B008DBEE3 /* Titans+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -365,6 +379,7 @@
 		BBE6A9A52CEE78590006E7CC /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
+				BB660E212D296E66008DBEE3 /* Titans+Transformer.swift */,
 				BBB5CA192D0A2CD1002073B2 /* String+Transformer.swift */,
 				BBE6A9AC2CEE78D10006E7CC /* Characters+Transformer.swift */,
 				BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */,
@@ -542,6 +557,7 @@
 				BBB5CA1A2D0A2CD6002073B2 /* String+Transformer.swift in Sources */,
 				BBB5CA312D0A2E84002073B2 /* Root+CoreDataClass.swift in Sources */,
 				BBB5CA322D0A2E84002073B2 /* Root+CoreDataProperties.swift in Sources */,
+				BB660E222D296E6E008DBEE3 /* Titans+Transformer.swift in Sources */,
 				BBCAF3F42CEF3A090004AB37 /* EpisodesUseCase.swift in Sources */,
 				BBE6A9A92CEE789F0006E7CC /* Groups+Transfomer.swift in Sources */,
 				BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */,
@@ -562,16 +578,20 @@
 				BBAD92112CF095140040FC01 /* Localization.swift in Sources */,
 				BB0BBE392CF4B3F70014C968 /* FilterButtonView.swift in Sources */,
 				BBEB11422CF1CEF00048A65B /* CharactersListView.swift in Sources */,
-				BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */,
 				BBCA93F42CF31F4B004312F9 /* SectionImageCarouselView.swift in Sources */,
 				BBFBCCC72CF469C3004462D6 /* SettingsView.swift in Sources */,
 				BBE6A9B82CEE7A560006E7CC /* Helpers.swift in Sources */,
 				BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */,
-				BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */,
 				BBE6A9B32CEE79280006E7CC /* CoreDataProvider.swift in Sources */,
 				BB456ED32CF5D5FB00B0CCD4 /* TopBarView.swift in Sources */,
 				BBE6A9AF2CEE78F60006E7CC /* Information+Transformer.swift in Sources */,
 				BB0BBE352CF498710014C968 /* FilterView.swift in Sources */,
+				BB660E462D29724B008DBEE3 /* Information+CoreDataProperties.swift in Sources */,
+				BB660E4E2D29727E008DBEE3 /* Information+CoreDataClass.swift in Sources */,
+				BB660E4F2D29727E008DBEE3 /* RootTitan+CoreDataClass.swift in Sources */,
+				BB660E502D29727E008DBEE3 /* Titans+CoreDataClass.swift in Sources */,
+				BB660E482D29724B008DBEE3 /* RootTitan+CoreDataProperties.swift in Sources */,
+				BB660E4A2D29724B008DBEE3 /* Titans+CoreDataProperties.swift in Sources */,
 				BBB5CA2D2D0A2E3E002073B2 /* Relatives+CoreDataClass.swift in Sources */,
 				BBB5CA2E2D0A2E3E002073B2 /* Relatives+CoreDataProperties.swift in Sources */,
 				BBEB11452CF1D1910048A65B /* ImageView.swift in Sources */,
