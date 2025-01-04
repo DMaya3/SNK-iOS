@@ -25,6 +25,17 @@ extension WebRepository {
             return Fail<T, Error>(error: error).eraseToAnyPublisher()
         }
     }
+    
+    func call<T>(endpoint: APICall, httpCodes: HTTPCodes = .success) -> AnyPublisher<T, Error> where T: Decodable {
+        do {
+            let request = try endpoint.urlRequest(baseUrl: self.baseUrl)
+            return self.session
+                .dataTaskPublisher(for: request)
+                .requestJSON(httpCodes: httpCodes)
+        } catch {
+            return Fail<T, Error>(error: error).eraseToAnyPublisher()
+        }
+    }
 }
 
 private extension Publisher where Output == URLSession.DataTaskPublisher.Output {

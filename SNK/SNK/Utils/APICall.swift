@@ -15,7 +15,7 @@ protocol APICall {
 }
 
 extension APICall {
-    func urlRequest(baseUrl: String, add: String) throws -> URLRequest {
+    func urlRequest(baseUrl: String, add: String = "") throws -> URLRequest {
         guard let url = URL(string: baseUrl + self.path + add) else {
             throw APIError.invalidUrl
         }
