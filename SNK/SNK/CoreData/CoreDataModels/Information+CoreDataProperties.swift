@@ -2,7 +2,7 @@
 //  Information+CoreDataProperties.swift
 //  SNK
 //
-//  Created by David Jesús Maya Quirós on 20/11/2024.
+//  Created by David Jesús Maya Quirós on 04/01/2025.
 //
 //
 
@@ -20,8 +20,9 @@ extension Information {
     @NSManaged public var next_page: String?
     @NSManaged public var pages: Int64
     @NSManaged public var prev_page: String?
-    @NSManaged public var rootEpisodes: RootEpisodes?
     @NSManaged public var root: Root?
+    @NSManaged public var rootEpisodes: RootEpisodes?
+    @NSManaged public var toRootTitan: RootTitan?
 
 }
 

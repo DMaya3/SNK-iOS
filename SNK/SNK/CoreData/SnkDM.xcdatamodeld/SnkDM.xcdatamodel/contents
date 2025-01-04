@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24A335" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Characters" representedClassName="Characters" parentEntity="Root" syncable="YES">
         <attribute name="age" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="alias" optional="YES" attributeType="Transformable" valueTransformerName="StringArrayTransformer"/>
@@ -38,6 +38,7 @@
         <attribute name="prev_page" optional="YES" attributeType="String"/>
         <relationship name="root" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Root" inverseName="information" inverseEntity="Root"/>
         <relationship name="rootEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootEpisodes" inverseName="informationEpisodes" inverseEntity="RootEpisodes"/>
+        <relationship name="toRootTitan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootTitan" inverseName="toInfo" inverseEntity="RootTitan"/>
     </entity>
     <entity name="Relatives" representedClassName="Relatives" syncable="YES">
         <attribute name="family" optional="YES" attributeType="String"/>
@@ -54,5 +55,22 @@
         <attribute name="results" optional="YES" attributeType="Transformable" valueTransformerName="EpisodesArrayTransformer"/>
         <relationship name="informationEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Information" inverseName="rootEpisodes" inverseEntity="Information"/>
         <relationship name="relationEpisodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Episodes" inverseName="rootEpisodes" inverseEntity="Episodes"/>
+    </entity>
+    <entity name="RootTitan" representedClassName="RootTitan" syncable="YES">
+        <attribute name="info" optional="YES" attributeType="Transformable" valueTransformerName="InformationTransformer"/>
+        <attribute name="results" optional="YES" attributeType="Transformable" valueTransformerName="TitansArrayTransformer"/>
+        <relationship name="toInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Information" inverseName="toRootTitan" inverseEntity="Information"/>
+        <relationship name="toResults" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Titans" inverseName="toRootTitan" inverseEntity="Titans"/>
+    </entity>
+    <entity name="Titans" representedClassName="Titans" syncable="YES">
+        <attribute name="abilities" optional="YES" attributeType="Transformable" valueTransformerName="StringArrayTransformer"/>
+        <attribute name="allegiance" optional="YES" attributeType="String"/>
+        <attribute name="current_inheritor" optional="YES" attributeType="String"/>
+        <attribute name="former_inheritors" optional="YES" attributeType="Transformable" valueTransformerName="StringArrayTransformer"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="img_titan" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="toRootTitan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RootTitan" inverseName="toResults" inverseEntity="RootTitan"/>
     </entity>
 </model>
