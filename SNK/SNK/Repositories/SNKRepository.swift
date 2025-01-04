@@ -11,6 +11,7 @@ import Combine
 protocol SNKRepository: WebRepository {
     func fetchAllCharactersDataService(pages: Int) async -> AnyPublisher<Root, Error>
     func fetchAllEpisodesDataService(pages: Int) async -> AnyPublisher<RootEpisodes, Error>
+    func fetchAllTitansDataService() async -> AnyPublisher<RootTitan, Error>
 }
 
 struct SNKDataRepository: SNKRepository {
@@ -25,12 +26,17 @@ struct SNKDataRepository: SNKRepository {
     func fetchAllEpisodesDataService(pages: Int) async -> AnyPublisher<RootEpisodes, any Error> {
         return call(endpoint: API.allEpisodes, pages: pages)
     }
+    
+    func fetchAllTitansDataService() async -> AnyPublisher<RootTitan, any Error> {
+        return call(endpoint: API.allTitans)
+    }
 }
 
 extension SNKDataRepository {
     enum API {
         case allCharacters
         case allEpisodes
+        case allTitans
     }
 }
 
@@ -41,12 +47,14 @@ extension SNKDataRepository.API: APICall {
             return "/characters/?page="
         case .allEpisodes:
             return "/episodes/?page="
+        case .allTitans:
+            return "/titans"
         }
     }
     
     var method: String {
         switch self {
-        case .allCharacters, .allEpisodes:
+        case .allCharacters, .allEpisodes, .allTitans:
             return "GET"
         }
     }
