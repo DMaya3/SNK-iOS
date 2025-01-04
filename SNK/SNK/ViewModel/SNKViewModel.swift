@@ -12,6 +12,7 @@ import Foundation
 class SNKViewModel: ObservableObject {
     @Published var characters: [Characters] = []
     @Published var episodes: [Episodes] = []
+    @Published var titans: [Titans] = []
     private var suscription = Set<AnyCancellable>()
     private var coreDataProvider = CoreDataProvider()
     var characterPage: Int = 0
@@ -30,10 +31,15 @@ class SNKViewModel: ObservableObject {
         DefaultEpisodesUseCase()
     }
     
+    var titansUseCase: TitansUseCase {
+        DefaultTitansUseCase()
+    }
+
     init() {
         Task {
             await self.fetchCharacters()
             await self.fetchEpisodes()
+            await self.fetchTitans()
         }
     }
     
@@ -50,6 +56,12 @@ class SNKViewModel: ObservableObject {
         if !self.episodePages.contains(self.episodePage) {
             self.episodePages.append(self.episodePage)
             await self.suscribeEpisodes(page: self.episodePage)
+        }
+    }
+
+    func fetchTitans() async {
+        if !self.coreDataProvider.checkIsTitansExisting(titans: self.titans) {
+            await self.suscribeTitans()
         }
     }
 }
@@ -112,6 +124,27 @@ extension SNKViewModel {
             }
             .store(in: &suscription)
     }
+
+    func titansPublisher() async -> AnyPublisher<RootTitan, Error> {
+        self.isLoading = true
+        return await self.titansUseCase.fetchDataTitans()
+    }
+
+    func suscribeTitans() async {
+        await titansPublisher()
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                self?.handleCompletion(completion)
+            } receiveValue: { [weak self] rootTitan in
+                self?.isLoading = false
+                if let results = rootTitan.results {
+                    for titan in results {
+                        self?.fillTitans(titan: titan)
+                    }
+                }
+            }
+            .store(in: &suscription)
+    }
 }
 
 // MARK: - Helpers
@@ -132,6 +165,16 @@ extension SNKViewModel {
             let newEpisode = try self.coreDataProvider.saveEpisodeEntity(episode: episode)
             self.episodes.append(newEpisode)
             print("Episode \(episode.episode ?? "") saved successfully")
+        } catch let error as NSError {
+            print("Error \(error.code): \(error.localizedDescription) - \(error.userInfo)")
+        }
+    }
+
+    func fillTitans(titan: Titans) {
+        do {
+            let newTitan = try self.coreDataProvider.saveTitanEntity(titan: titan)
+            self.titans.append(newTitan)
+            print("Titan \(titan.name ?? "") saved successfully")
         } catch let error as NSError {
             print("Error \(error.code): \(error.localizedDescription) - \(error.userInfo)")
         }
