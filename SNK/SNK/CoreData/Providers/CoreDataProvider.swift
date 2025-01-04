@@ -103,6 +103,23 @@ class CoreDataProvider {
         episodeEntity.characters = episode.characters
         return episodeEntity
     }
+    
+    func saveTitanEntity(titan: Titans) throws -> Titans {
+        let context = CoreDataProvider.shared.context
+        guard let entity = NSEntityDescription.entity(forEntityName: "Titans", in: context) else {
+            throw CoreDataErrors.entityNotFound
+        }
+        let titanEntity = Titans(entity: entity, insertInto: context)
+        titanEntity.id = titan.id
+        titanEntity.name = titan.name
+        titanEntity.img_titan = titan.img_titan
+        titanEntity.height = titan.height
+        titanEntity.abilities = titan.abilities
+        titanEntity.current_inheritor = titan.current_inheritor
+        titanEntity.former_inheritors = titan.former_inheritors
+        titanEntity.allegiance = titan.allegiance
+        return titanEntity
+    }
 }
 
 // MARK: - FetchData from CoreData and save to CoreData
@@ -147,6 +164,28 @@ extension CoreDataProvider {
                     print(error.localizedDescription)
                 }
             }
+        return isExisting
+    }
+    
+    func checkIsTitansExisting(titans: [Titans]) -> Bool {
+        var isExisting = false
+        titans.forEach { titan in
+            do {
+                let fetchRequest: NSFetchRequest<Titans> = Titans.fetchRequest()
+                fetchRequest.predicate = NSPredicate(format: "id == %@", NSNumber(value: titan.id))
+                
+                let existingTitans = try CoreDataProvider.shared.context.fetch(fetchRequest)
+                
+                if !existingTitans.isEmpty {
+                    isExisting = true
+                    print("Titan with id \(titan.id) already exists.")
+                } else {
+                    isExisting = false
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
         return isExisting
     }
 }
