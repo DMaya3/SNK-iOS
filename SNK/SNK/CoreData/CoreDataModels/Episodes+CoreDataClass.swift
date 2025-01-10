@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(Episodes)
-public class Episodes: NSManagedObject, NSSecureCoding, Decodable, ArrayConvertible {
+public class Episodes: NSManagedObject, NSSecureCoding, Decodable, ObjectConvertible {
     enum CodingKeys: String, CodingKey {
         case id
         case name

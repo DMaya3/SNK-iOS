@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(Characters)
-public class Characters: NSManagedObject, NSSecureCoding, Decodable, ArrayConvertible {
+public class Characters: NSManagedObject, NSSecureCoding, Decodable, ObjectConvertible {
     enum CodingKeys: String, CodingKey {
         case id
         case name

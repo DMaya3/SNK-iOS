@@ -26,6 +26,10 @@ public class Titans: NSManagedObject, NSSecureCoding, Decodable {
         return true
     }
     
+    public static var entity: NSEntityDescription {
+        NSEntityDescription.entity(forEntityName: "Titans", in: CoreDataProvider.preview.context) ?? NSEntityDescription()
+    }
+    
     public func encode(with coder: NSCoder) {
         coder.encode(self.id, forKey: CodingKeys.id.rawValue)
         coder.encode(self.name, forKey: CodingKeys.name.rawValue)
