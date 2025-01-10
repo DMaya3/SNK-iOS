@@ -109,15 +109,15 @@ extension SectionImageCarouselView {
         DefaultHelpers()
     }
     
-    var membersFamily: [ArrayConvertible] {
+    var membersFamily: [ObjectConvertible] {
         self.helpers.getArrayObjectById(stringArray: self.members, objectArray: self.characters)
     }
     
-    var arrayEpisodes: [ArrayConvertible] {
+    var arrayEpisodes: [ObjectConvertible] {
         self.helpers.getArrayObjectById(stringArray: self.urlEpisodes, objectArray: self.episodes)
     }
     
-    var newArray: [ArrayConvertible] {
+    var newArray: [ObjectConvertible] {
         return !self.membersFamily.isEmpty ? self.membersFamily : self.arrayEpisodes
     }
 }

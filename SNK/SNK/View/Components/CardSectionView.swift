@@ -14,11 +14,16 @@ struct CardSectionView: View {
     private var titleSection: String
     private var characters: [Characters]
     private var episodes: [Episodes]
+    private var titans: [Titans]
     
-    init(titleSection: String, characters: [Characters] = [], episodes: [Episodes] = []) {
+    init(titleSection: String,
+         characters: [Characters] = [],
+         episodes: [Episodes] = [],
+         titans: [Titans] = []) {
         self.titleSection = titleSection
         self.characters = characters
         self.episodes = episodes
+        self.titans = titans
     }
     
     var body: some View {
@@ -28,6 +33,8 @@ struct CardSectionView: View {
                     self.displayImage(self.characters[self.currentIndex].img)
                 } else if !self.episodes.isEmpty {
                     self.displayImage(self.episodes[self.currentIndex].img)
+                } else if !self.titans.isEmpty {
+                    self.displayImage(self.titans[self.currentIndex].img_titan)
                 } else {
                     Image(.wingsOfFreedom)
                         .resizable()
@@ -45,6 +52,10 @@ struct CardSectionView: View {
                     
                     if !self.episodes.isEmpty {
                         self.currentIndex = Int.random(in: 0..<self.episodes.count)
+                    }
+                    
+                    if !self.titans.isEmpty {
+                        self.currentIndex = Int.random(in: 0..<self.titans.count)
                     }
                 }
             }
