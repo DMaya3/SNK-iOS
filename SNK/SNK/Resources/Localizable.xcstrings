@@ -256,6 +256,23 @@
         }
       }
     },
+    "current_inheritor_section" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current inheritor"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heredero actual"
+          }
+        }
+      }
+    },
     "description_home_view" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -477,6 +494,23 @@
         }
       }
     },
+    "former_inheritors_section" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Former inheritors"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Antiguos herederos"
+          }
+        }
+      }
+    },
     "link_more_info_home_view" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -681,6 +715,40 @@
         }
       }
     },
+    "titan_abilities_section" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abilities"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Habilidades"
+          }
+        }
+      }
+    },
+    "titan_height" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Height: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altura: %@"
+          }
+        }
+      }
+    },
     "title_characters" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -779,6 +847,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Qué quieres ver primero?"
+          }
+        }
+      }
+    },
+    "title_titans" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titans"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titanes"
           }
         }
       }

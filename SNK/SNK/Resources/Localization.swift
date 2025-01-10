@@ -62,6 +62,12 @@ protocol Localization {
     var accessibility_clear_btn: String { get }
     var accessibility_swipe_carousel: String { get }
     var accessibility_toolbar_home: String { get }
+    
+    var title_titans: String { get }
+    var titan_abilities_section: String { get }
+    func titan_height(height: String) -> String
+    var current_inheritor_section: String { get }
+    var former_inheritors_section: String { get }
 }
 
 struct DefaultLocalization: Localization {
@@ -276,6 +282,28 @@ struct DefaultLocalization: Localization {
     
     var accessibility_toolbar_home: String {
         return self.customLocalizedString("accessibility_toolbar_home")
+    }
+    
+    // MARK: - Titans
+    var title_titans: String {
+        return self.customLocalizedString("title_titans")
+    }
+    
+    var titan_abilities_section: String {
+        return self.customLocalizedString("titan_abilities_section")
+    }
+    
+    func titan_height(height: String) -> String {
+        let format = self.customLocalizedString("titan_height")
+        return String(format: format, height)
+    }
+    
+    var current_inheritor_section: String {
+        return self.customLocalizedString("current_inheritor_section")
+    }
+    
+    var former_inheritors_section: String {
+        return self.customLocalizedString("former_inheritors_section")
     }
 }
 
