@@ -15,9 +15,9 @@ protocol WebRepository {
 }
 
 extension WebRepository {
-    func call<T>(endpoint: APICall, httpCodes: HTTPCodes = .success, pages: Int) -> AnyPublisher<T, Error> where T: Decodable {
+    func call<T>(endpoint: APICall, httpCodes: HTTPCodes = .success, add: String) -> AnyPublisher<T, Error> where T: Decodable {
         do {
-            let request = try endpoint.urlRequest(baseUrl: self.baseUrl, add: String(pages))
+            let request = try endpoint.urlRequest(baseUrl: self.baseUrl, add: add)
             return self.session
                 .dataTaskPublisher(for: request)
                 .requestJSON(httpCodes: httpCodes)
