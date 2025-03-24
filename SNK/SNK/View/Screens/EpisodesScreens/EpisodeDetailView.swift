@@ -52,7 +52,7 @@ struct EpisodeDetailView: View {
                         .foregroundStyle(self.colorByColorScheme)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    if let newCharacters = self.helpers.getArrayObjectById(stringArray: characters, objectArray: self.characters) as? [Characters] {
+                    if let newCharacters = self.helpers.getArrayWithObjectById(stringArray: characters, objectArray: self.characters) as? [Characters] {
                         ForEach(newCharacters, id: \.self) { character in
                             NavigationLink {
                                 CharacterDetailView(character: character, characters: self.characters, episodes: self.episodes)

@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @FetchRequest(entity: Characters.entity, sortDescriptors: [NSSortDescriptor(key: "id", ascending: true)]) public var characters: FetchedResults<Characters>
     @FetchRequest(entity: Episodes.entity, sortDescriptors: [NSSortDescriptor(key: "id", ascending: true)]) public var episodes: FetchedResults<Episodes>
+    @FetchRequest(entity: Titans.entity, sortDescriptors: [NSSortDescriptor(key: "id", ascending: true)]) public var titans: FetchedResults<Titans>
     @Environment(\.colorScheme) private var colorScheme
     @EnvironmentObject private var viewModel: SNKViewModel
     @Namespace private var nameSpace
@@ -78,6 +79,25 @@ struct HomeView: View {
                                         .matchedTransitionSource(id: "EpisodesList", in: nameSpace)
                                 } else {
                                     CardSectionView(titleSection: self.localization.title_section_episodes_home_view, episodes: Array(self.episodes))
+                                }
+                            }
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel(self.localization.title_section_episodes_home_view)
+                            .accessibilityAddTraits(.isButton)
+                            
+                            NavigationLink {
+                                if #available(iOS 18.0, *) {
+                                    TitansView(titans: Array(self.titans), characters: Array(self.characters))
+                                     .navigationTransition(.zoom(sourceID: "TitansView", in: nameSpace))
+                                } else {
+                                    TitansView(titans: Array(self.titans), characters: Array(self.characters))
+                                }
+                            } label: {
+                                if #available(iOS 18.0, *) {
+                                    CardSectionView(titleSection: self.localization.title_titans, titans: Array(self.titans))
+                                        .matchedTransitionSource(id: "TitansView", in: nameSpace)
+                                } else {
+                                    CardSectionView(titleSection: self.localization.title_titans, titans: Array(self.titans))
                                 }
                             }
                             .accessibilityElement(children: .ignore)
