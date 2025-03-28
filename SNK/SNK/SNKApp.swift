@@ -19,6 +19,7 @@ struct SNKApp: App {
     }
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = SNKViewModel()
+    @StateObject private var charactersVM = CharactersViewModel()
     @StateObject private var colorSchemeManager = ColorSchemeManager()
     @StateObject private var languageSettings = LanguageSettings()
     var body: some Scene {
@@ -26,6 +27,7 @@ struct SNKApp: App {
             HomeView()
                 .environment(\.managedObjectContext, CoreDataProvider.preview.context)
                 .environmentObject(self.viewModel)
+                .environmentObject(self.charactersVM)
                 .environmentObject(self.languageSettings)
                 .environmentObject(self.colorSchemeManager)
                 .preferredColorScheme(self.colorSchemeManager.isDarkMode ? .dark : .light)

@@ -10,21 +10,13 @@ import CoreData
 import Foundation
 
 class SNKViewModel: ObservableObject {
-    @Published var characters: [Characters] = []
     @Published var episodes: [Episodes] = []
     private var suscription = Set<AnyCancellable>()
     private var coreDataProvider = CoreDataProvider()
-    var characterPage: Int = 0
     var episodePage: Int = 0
-    var characterPages: [Int] = []
     var episodePages: [Int] = []
     var isLoading: Bool = false
-    var root: Root = Root(entity: NSEntityDescription.entity(forEntityName: "Root", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
     var rootEpisodes: RootEpisodes = RootEpisodes(entity: NSEntityDescription.entity(forEntityName: "RootEpisodes", in: CoreDataProvider.preview.context) ?? NSEntityDescription(), insertInto: CoreDataProvider.preview.context)
-    
-    var charactersUseCase: CharactersUseCase {
-        DefaultCharatersUseCase()
-    }
     
     var episodesUseCase: EpisodesUseCase {
         DefaultEpisodesUseCase()
@@ -32,16 +24,7 @@ class SNKViewModel: ObservableObject {
     
     init() {
         Task {
-            await self.fetchCharacters()
             await self.fetchEpisodes()
-        }
-    }
-    
-    func fetchCharacters() async {
-        self.characterPage += 1
-        if !self.characterPages.contains(self.characterPage) {
-            self.characterPages.append(self.characterPage)
-            await self.suscribeCharacters(page: self.characterPage)
         }
     }
     
@@ -69,28 +52,6 @@ private extension SNKViewModel {
 
 // MARK: - Fetch Data
 extension SNKViewModel {
-    func charactersPublisher(pages: Int) async -> AnyPublisher<Root, Error> {
-        self.isLoading = true
-        return await self.charactersUseCase.fetchDataCharacters(pages: pages)
-    }
-    
-    func suscribeCharacters(page: Int) async {
-        await charactersPublisher(pages: page)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                self?.handleCompletion(completion)
-            } receiveValue: { [weak self] root in
-                self?.isLoading = false
-                self?.root = root
-                if let results = self?.root.results, !(self?.coreDataProvider.checkIsCharacterExisting(characters: results) ?? false) {
-                    for character in results {
-                        self?.fillCharacters(character: character)
-                    }
-                }
-            }
-            .store(in: &suscription)
-    }
-    
     func episodesPublisher(pages: Int) async -> AnyPublisher<RootEpisodes, Error> {
         self.isLoading = true
         return await self.episodesUseCase.fetchDataEpisodes(pages: pages)
@@ -116,17 +77,6 @@ extension SNKViewModel {
 
 // MARK: - Helpers
 extension SNKViewModel {
-    func fillCharacters(character: Characters) {
-        do {
-            if let newCharacter = try self.coreDataProvider.saveCharacterEntity(character: character) {
-                self.characters.append(newCharacter)
-                print("Character \(character.name ?? "") saved successfully.")
-            }
-        } catch let error as NSError {
-            print("Error \(error.code): \(error.localizedDescription) - \(error.userInfo)")
-        }
-    }
-    
     func fillEpisodes(episode: Episodes) {
         do {
             let newEpisode = try self.coreDataProvider.saveEpisodeEntity(episode: episode)
@@ -140,24 +90,6 @@ extension SNKViewModel {
 
 // MARK: - Filters
 extension SNKViewModel {
-    func filterCharacters(filterName: String = "", filterStatus: Status = .none) -> [Characters] {
-        let filteredCharacters = self.characters.filter { character in
-            guard let name = character.name, let status = character.status else {
-                return false
-            }
-            if !filterName.isEmpty && filterStatus != .none {
-                return name.lowercased().contains(filterName.lowercased()) && status.contains(filterStatus.rawValue)
-            } else if !filterName.isEmpty {
-                return name.lowercased().contains(filterName.lowercased())
-            } else if filterStatus != .none {
-                return status.contains(filterStatus.rawValue)
-            } else {
-                return false
-            }
-        }
-        return filteredCharacters
-    }
-    
     func filterEpisodes(filterName: String = "", filterSeason: Seasons = .none) -> [Episodes] {
         var filterSeasonString: String {
             switch filterSeason {
