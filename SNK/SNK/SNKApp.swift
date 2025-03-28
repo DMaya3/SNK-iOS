@@ -17,6 +17,7 @@ struct SNKApp: App {
         ValueTransformer.setValueTransformer(RelativesArrayTransformer(), forName: NSValueTransformerName("RelativesArrayTransformer"))
         ValueTransformer.setValueTransformer(StringArrayTransformer(), forName: NSValueTransformerName("StringArrayTransformer"))
     }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var viewModel = SNKViewModel()
     @StateObject private var colorSchemeManager = ColorSchemeManager()
     @StateObject private var languageSettings = LanguageSettings()
