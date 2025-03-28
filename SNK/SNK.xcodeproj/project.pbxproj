@@ -181,6 +181,7 @@
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB59A92D97377F00E314F4 /* CoreData */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -190,6 +191,40 @@
 			children = (
 			);
 			path = Episodes;
+			sourceTree = "<group>";
+		};
+		B8EB59A92D97377F00E314F4 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB59AB2D9737E700E314F4 /* Transformers */,
+				B8EB59AA2D97378700E314F4 /* CoreDataModels */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B8EB59AA2D97378700E314F4 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBB5CA1B2D0A2D5C002073B2 /* Characters+CoreDataClass.swift */,
+				BBB5CA1C2D0A2D5C002073B2 /* Characters+CoreDataProperties.swift */,
+				BBB5CA232D0A2DEC002073B2 /* Groups+CoreDataClass.swift */,
+				BBB5CA242D0A2DEC002073B2 /* Groups+CoreDataProperties.swift */,
+				BBB5CA2B2D0A2E3E002073B2 /* Relatives+CoreDataClass.swift */,
+				BBB5CA2C2D0A2E3E002073B2 /* Relatives+CoreDataProperties.swift */,
+				BBB5CA2F2D0A2E84002073B2 /* Root+CoreDataClass.swift */,
+				BBB5CA302D0A2E84002073B2 /* Root+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		B8EB59AB2D9737E700E314F4 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				BBE6A9AC2CEE78D10006E7CC /* Characters+Transformer.swift */,
+				BBE6A9A82CEE78980006E7CC /* Groups+Transfomer.swift */,
+				BBE6A9AA2CEE78B30006E7CC /* Relatives+Transformer.swift */,
+			);
+			path = Transformers;
 			sourceTree = "<group>";
 		};
 		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
@@ -376,18 +411,10 @@
 		BBE6A96C2CEE77810006E7CC /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				BBB5CA1B2D0A2D5C002073B2 /* Characters+CoreDataClass.swift */,
-				BBB5CA1C2D0A2D5C002073B2 /* Characters+CoreDataProperties.swift */,
 				BBB5CA1F2D0A2DAB002073B2 /* Episodes+CoreDataClass.swift */,
 				BBB5CA202D0A2DAB002073B2 /* Episodes+CoreDataProperties.swift */,
-				BBB5CA232D0A2DEC002073B2 /* Groups+CoreDataClass.swift */,
-				BBB5CA242D0A2DEC002073B2 /* Groups+CoreDataProperties.swift */,
 				BBE6A98F2CEE77EB0006E7CC /* Information+CoreDataClass.swift */,
 				BBE6A9902CEE77EB0006E7CC /* Information+CoreDataProperties.swift */,
-				BBB5CA2B2D0A2E3E002073B2 /* Relatives+CoreDataClass.swift */,
-				BBB5CA2C2D0A2E3E002073B2 /* Relatives+CoreDataProperties.swift */,
-				BBB5CA2F2D0A2E84002073B2 /* Root+CoreDataClass.swift */,
-				BBB5CA302D0A2E84002073B2 /* Root+CoreDataProperties.swift */,
 				BBB5CA332D0A2EAA002073B2 /* RootEpisodes+CoreDataClass.swift */,
 				BBB5CA342D0A2EAA002073B2 /* RootEpisodes+CoreDataProperties.swift */,
 			);
@@ -398,11 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				BBB5CA192D0A2CD1002073B2 /* String+Transformer.swift */,
-				BBE6A9AC2CEE78D10006E7CC /* Characters+Transformer.swift */,
 				BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */,
-				BBE6A9A82CEE78980006E7CC /* Groups+Transfomer.swift */,
 				BBE6A9AE2CEE78F10006E7CC /* Information+Transformer.swift */,
-				BBE6A9AA2CEE78B30006E7CC /* Relatives+Transformer.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
