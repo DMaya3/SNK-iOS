@@ -185,6 +185,7 @@
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB59B62D973BEF00E314F4 /* Views */,
 				B8EB59B32D97399300E314F4 /* ViewModel */,
 				B8EB59AF2D97394300E314F4 /* UseCases */,
 				B8EB59AC2D97386100E314F4 /* Repositories */,
@@ -256,6 +257,14 @@
 				B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B8EB59B62D973BEF00E314F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB11402CF1CEE20048A65B /* CharactersScreens */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
@@ -353,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				BBB273122CF34AEE00DBFC21 /* EpisodesScreens */,
-				BBEB11402CF1CEE20048A65B /* CharactersScreens */,
 				BB0BBE342CF4986E0014C968 /* FilterView.swift */,
 				BBE6A95E2CEE72680006E7CC /* HomeView.swift */,
 				BBFBCCC62CF469BE004462D6 /* SettingsView.swift */,

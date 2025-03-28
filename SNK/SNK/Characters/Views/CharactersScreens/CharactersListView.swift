@@ -11,7 +11,7 @@ import CoreData
 struct CharactersListView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var viewModel: SNKViewModel
+    @EnvironmentObject private var viewModel: CharactersViewModel
     @State private var isMenuOpen: Bool = false
     @State private var isPresented: Bool = false
     @State private var isFiltered: Bool = false
