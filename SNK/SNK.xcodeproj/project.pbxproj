@@ -178,6 +178,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8EB59A72D97362F00E314F4 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		B8EB59A82D97363600E314F4 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
 		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +342,8 @@
 		BBE6A9602CEE72680006E7CC /* SNK */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB59A82D97363600E314F4 /* Episodes */,
+				B8EB59A72D97362F00E314F4 /* Characters */,
 				B8E21FD92D972FAA00085939 /* AppDelegate.swift */,
 				B8BD87002D91F8C3004605D4 /* SNK.entitlements */,
 				B8717B622D91DFEA004439E5 /* Info.plist */,
