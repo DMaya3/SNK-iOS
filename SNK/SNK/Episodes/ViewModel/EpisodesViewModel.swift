@@ -19,6 +19,20 @@ class EpisodesViewModel: ObservableObject {
     var episodesUseCase: EpisodesUseCase {
         DefaultEpisodesUseCase()
     }
+    
+    init() {
+        Task {
+            await self.fetchEpisodes()
+        }
+    }
+    
+    func fetchEpisodes() async {
+        self.page += 1
+        if !self.pages.contains(self.page) {
+            self.pages.append(self.page)
+            await self.suscribeEpisodes(pages: page)
+        }
+    }
 }
 
 // MARK: - Handle Errors
