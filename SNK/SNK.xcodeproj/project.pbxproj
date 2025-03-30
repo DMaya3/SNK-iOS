@@ -210,6 +210,34 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		B8D852852D99CF6D00A5E3C8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B8D852872D99CF8900A5E3C8 /* Transformers */,
+				B8D852862D99CF8000A5E3C8 /* CoreDataModels */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B8D852862D99CF8000A5E3C8 /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBB5CA1F2D0A2DAB002073B2 /* Episodes+CoreDataClass.swift */,
+				BBB5CA202D0A2DAB002073B2 /* Episodes+CoreDataProperties.swift */,
+				BBB5CA332D0A2EAA002073B2 /* RootEpisodes+CoreDataClass.swift */,
+				BBB5CA342D0A2EAA002073B2 /* RootEpisodes+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		B8D852872D99CF8900A5E3C8 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +253,7 @@
 		B8EB59A82D97363600E314F4 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B8D852852D99CF6D00A5E3C8 /* CoreData */,
 				B8D852842D99CEEE00A5E3C8 /* UseCases */,
 				B8D852812D99CD6900A5E3C8 /* Repositories */,
 			);
@@ -471,12 +500,8 @@
 		BBE6A96C2CEE77810006E7CC /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				BBB5CA1F2D0A2DAB002073B2 /* Episodes+CoreDataClass.swift */,
-				BBB5CA202D0A2DAB002073B2 /* Episodes+CoreDataProperties.swift */,
 				BBE6A98F2CEE77EB0006E7CC /* Information+CoreDataClass.swift */,
 				BBE6A9902CEE77EB0006E7CC /* Information+CoreDataProperties.swift */,
-				BBB5CA332D0A2EAA002073B2 /* RootEpisodes+CoreDataClass.swift */,
-				BBB5CA342D0A2EAA002073B2 /* RootEpisodes+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -485,7 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				BBB5CA192D0A2CD1002073B2 /* String+Transformer.swift */,
-				BBE6A9A62CEE78680006E7CC /* Episodes+Transformer.swift */,
 				BBE6A9AE2CEE78F10006E7CC /* Information+Transformer.swift */,
 			);
 			path = Transformers;
