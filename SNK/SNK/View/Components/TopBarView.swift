@@ -13,6 +13,8 @@ struct TopBarView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var isMenuOpen: Bool
     private var textHeader: String
+    private var hasMenu: Bool
+    @State private var isNavigationHome = false
     
     private var localization: Localization {
         DefaultLocalization()
@@ -22,9 +24,10 @@ struct TopBarView: View {
         self.colorScheme == .dark ? .white : .black
     }
     
-    init(isMenuOpen: Binding<Bool>, textHeader: String) {
+    init(isMenuOpen: Binding<Bool> = .constant(false), textHeader: String, hasMenu: Bool = true) {
         self._isMenuOpen = isMenuOpen
         self.textHeader = textHeader
+        self.hasMenu = hasMenu
     }
     
     var body: some View {
@@ -52,20 +55,35 @@ struct TopBarView: View {
             
             Spacer()
             
-            Button(action: {
-                withAnimation {
-                    self.isMenuOpen.toggle()
+            if self.hasMenu {
+                Button(action: {
+                    withAnimation {
+                        self.isMenuOpen.toggle()
+                    }
+                }, label: {
+                    Image(systemName: "list.bullet")
+                        .imageScale(.large)
+                        .tint(self.colorByColorScheme)
+                })
+                .padding()
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(self.localization.accessibility_toolbar_menu_btn)
+                .accessibilityAddTraits(.isButton)
+                .accessibilitySortPriority(2)
+            } else {
+                Button {
+                    isNavigationHome = true
+                } label: {
+                    Image(systemName: "house.fill")
+                        .foregroundStyle(self.colorByColorScheme)
+                        .font(.title3)
                 }
-            }, label: {
-                Image(systemName: "list.bullet")
-                    .imageScale(.large)
-                    .tint(self.colorByColorScheme)
-            })
-            .padding()
-            .accessibilityElement(children: .combine)
-            .accessibilityLabel(self.localization.accessibility_toolbar_menu_btn)
-            .accessibilityAddTraits(.isButton)
-            .accessibilitySortPriority(2)
+                .padding()
+                .accessibilityLabel(self.localization.accessibility_toolbar_home)
+                .navigationDestination(isPresented: $isNavigationHome) {
+                    HomeView()
+                }
+            }
         }
     }
 }
