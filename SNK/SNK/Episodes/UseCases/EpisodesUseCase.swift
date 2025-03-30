@@ -12,7 +12,7 @@ protocol EpisodesUseCase {
 }
 
 struct DefaultEpisodesUseCase: EpisodesUseCase {
-    private let repository = SNKDataRepository()
+    private let repository = EpisodesDataRepository()
     
     func fetchDataEpisodes(pages: Int) async -> AnyPublisher<RootEpisodes, any Error> {
         return await self.repository.fetchAllEpisodesDataService(pages: pages)

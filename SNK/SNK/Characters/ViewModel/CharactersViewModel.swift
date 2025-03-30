@@ -33,8 +33,6 @@ class CharactersViewModel: ObservableObject {
             await self.suscribeCharacters(page: self.page)
         }
     }
-    
-    
 }
 
 // MARK: - Handle Errors
@@ -60,7 +58,6 @@ extension CharactersViewModel {
             .sink { [weak self] completion in
                 self?.handleCompletion(completion)
             } receiveValue: { [weak self] root in
-               // self?.root = root
                 if let results = root.results, !(self?.coreDataProvider.checkIsCharacterExisting(characters: results) ?? false) {
                     for character in results {
                         self?.fillCharacters(character: character)

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EpisodeDetailView: View {
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.dismiss) private var dismiss
     @State private var isZoomed: Bool = false
     private var episode: Episodes
     private var episodes: [Episodes]
@@ -23,6 +22,9 @@ struct EpisodeDetailView: View {
     
     var body: some View {
         VStack {
+            NavigationStack {
+                TopBarView(textHeader: self.episode.name ?? "", hasMenu: false)
+            }
             ScrollView {
                 ImageView(isZoomed: $isZoomed,
                           imageData: self.episode.img,
@@ -85,31 +87,6 @@ struct EpisodeDetailView: View {
                                    startPoint: .topLeading,
                                    endPoint: .bottomTrailing))
         .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    self.dismiss.callAsFunction()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                        .foregroundStyle(self.colorByColorScheme)
-                        .font(.title3)
-                }
-                .padding()
-                .accessibilityLabel(self.localization.accessibility_toolbar_back_btn)
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    HomeView()
-                } label: {
-                    Image(systemName: "house.fill")
-                        .foregroundStyle(self.colorByColorScheme)
-                        .font(.title3)
-                }
-                .padding()
-                .accessibilityLabel(self.localization.accessibility_toolbar_home)
-            }
-        }
     }
 }
 

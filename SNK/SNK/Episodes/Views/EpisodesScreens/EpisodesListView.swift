@@ -10,13 +10,10 @@ import SwiftUI
 struct EpisodesListView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var viewModel: SNKViewModel
+    @EnvironmentObject private var viewModel: EpisodesViewModel
     @State private var isMenuOpen: Bool = false
-    @State private var isZoomed: Bool = false
     @State private var isPresented: Bool = false
     @State private var isFiltered: Bool = false
-    @State private var name: String = ""
-    @State private var seasons: Seasons = .none
     @State private var episodes: [Episodes]
     private var characters: [Characters]
     @State private var originalEpisodes: [Episodes]
@@ -38,51 +35,15 @@ struct EpisodesListView: View {
                     .accessibilitySortPriority(1)
                     ScrollView {
                         LazyVStack {
-                            ForEach(self.episodes.sorted { $0.episode ?? "" < $1.episode ?? "" }, id: \.self) { item in
+                            ForEach(self.sortedEpisodes, id: \.self) { item in
                                 NavigationLink {
                                     EpisodeDetailView(episode: item, episodes: self.originalEpisodes, characters: self.characters)
                                 } label: {
                                     VStack {
-                                        HStack {
-                                            ImageView(imageData: item.img,
-                                                      imageWidth: 125,
-                                                      imageHeight: 125)
-                                            VStack {
-                                                if let name = item.name, name != "" {
-                                                    Text(self.localization.name_charlist_view(name: name))
-                                                        .multilineTextAlignment(.leading)
-                                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                                        .font(.subheadline)
-                                                        .fontWeight(.semibold)
-                                                        .foregroundStyle(self.colorByColorScheme)
-                                                        .padding(.trailing, 10)
-                                                }
-                                                if let episode = item.episode, episode != "" {
-                                                    Text(episode)
-                                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                                        .font(.subheadline)
-                                                        .fontWeight(.semibold)
-                                                        .foregroundStyle(self.colorByColorScheme)
-                                                }
-                                            }
-                                        }
-                                        .padding()
+                                        EpisodeCellView(episode: item)
                                         
                                         if item == self.episodes.last && item.id < 88 && !self.isFiltered {
-                                            Button {
-                                                Task {
-                                                    await self.viewModel.fetchEpisodes()
-                                                }
-                                                self.episodes = self.viewModel.episodes
-                                                self.originalEpisodes = self.viewModel.episodes
-                                            } label: {
-                                                HStack {
-                                                    Image(systemName: "arrow.2.circlepath")
-                                                    Text(self.localization.load_more_data)
-                                                }
-                                            }
-                                            .font(.title3)
-                                            .foregroundStyle(self.colorByColorScheme)
+                                            self.loadMoreButton
                                         }
                                     }
                                 }
@@ -94,10 +55,8 @@ struct EpisodesListView: View {
                 .blur(radius: self.isMenuOpen ? 3 : 0)
                 .sheet(isPresented: $isPresented, content: {
                     FilterView(isCharacter: false) { name, _, seasons in
-                        self.name = name
-                        self.seasons = seasons
                         self.isFiltered = name.isEmpty && seasons == .none ? false : true
-                        self.episodes = self.viewModel.filterEpisodes(filterName: self.name, filterSeason: self.seasons)
+                        self.episodes = self.viewModel.filterEpisodes(filterName: name, filterSeason: seasons)
                     }
                 })
                 .navigationBarBackButtonHidden()
@@ -156,14 +115,6 @@ struct EpisodesListView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        EpisodesListView(episodes: [], characters: [])
-            .environment(\.managedObjectContext, CoreDataProvider.preview.context)
-            .environmentObject(SNKViewModel())
-    }
-}
-
 extension EpisodesListView {
     private var localization: Localization {
         DefaultLocalization()
@@ -175,5 +126,26 @@ extension EpisodesListView {
     
     private var foregroundColorByColorScheme: Color {
         self.colorScheme == .dark ? .black : .white
+    }
+    
+    private var sortedEpisodes: [Episodes] {
+        self.episodes.sorted { ($0.episode ?? "") < ($1.episode ?? "") }
+    }
+    
+    private var loadMoreButton: some View {
+        Button {
+            Task {
+                await self.viewModel.fetchEpisodes()
+            }
+            self.episodes = self.viewModel.episodes
+            self.originalEpisodes = self.viewModel.episodes
+        } label: {
+            HStack {
+                Image(systemName: "arrow.2.circlepath")
+                Text(self.localization.load_more_data)
+            }
+        }
+        .font(.title3)
+        .foregroundStyle(self.colorByColorScheme)
     }
 }
