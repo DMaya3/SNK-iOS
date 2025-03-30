@@ -12,6 +12,7 @@
 		B8717B642D91E484004439E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8717B632D91E484004439E5 /* GoogleService-Info.plist */; };
 		B8717B662D91E4AE004439E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8717B652D91E4AE004439E5 /* FirebaseAnalytics */; };
 		B8C7F12C2D98702200125273 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7F12B2D98702200125273 /* CharacterCellView.swift */; };
+		B8D852832D99CD7F00A5E3C8 /* EpisodesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */; };
 		B8E21FDA2D972FAA00085939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E21FD92D972FAA00085939 /* AppDelegate.swift */; };
 		B8EB59AE2D97387B00E314F4 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */; };
 		B8EB59B52D97399E00E314F4 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */; };
@@ -94,6 +95,7 @@
 		B8717B632D91E484004439E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8BD87002D91F8C3004605D4 /* SNK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SNK.entitlements; sourceTree = "<group>"; };
 		B8C7F12B2D98702200125273 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
+		B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesRepository.swift; sourceTree = "<group>"; };
 		B8E21FD92D972FAA00085939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +194,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		B8D852812D99CD6900A5E3C8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		B8D852842D99CEEE00A5E3C8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BBCAF3F32CEF3A040004AB37 /* EpisodesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +225,8 @@
 		B8EB59A82D97363600E314F4 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B8D852842D99CEEE00A5E3C8 /* UseCases */,
+				B8D852812D99CD6900A5E3C8 /* Repositories */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -407,14 +427,6 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		BBCAF3F22CEF39F30004AB37 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				BBCAF3F32CEF3A040004AB37 /* EpisodesUseCase.swift */,
-			);
-			path = UseCases;
-			sourceTree = "<group>";
-		};
 		BBE6A95C2CEE72680006E7CC /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +446,6 @@
 				BBE6A9652CEE726F0006E7CC /* CoreData */,
 				BBCAF3E92CEF27C80004AB37 /* Repositories */,
 				BBAD920D2CF091930040FC01 /* Resources */,
-				BBCAF3F22CEF39F30004AB37 /* UseCases */,
 				BBE6A9B42CEE7A130006E7CC /* Utils */,
 				BBE6A95C2CEE72680006E7CC /* Preview Content */,
 				BBA8B0F72CEFB2EF00F3F506 /* View */,
@@ -689,6 +700,7 @@
 				BBB5CA2D2D0A2E3E002073B2 /* Relatives+CoreDataClass.swift in Sources */,
 				BBB5CA2E2D0A2E3E002073B2 /* Relatives+CoreDataProperties.swift in Sources */,
 				BBEB11452CF1D1910048A65B /* ImageView.swift in Sources */,
+				B8D852832D99CD7F00A5E3C8 /* EpisodesRepository.swift in Sources */,
 				BBCAF3EF2CEF2B0A0004AB37 /* NetworkingHelpers.swift in Sources */,
 				BB3E067E2CF39E1000332F81 /* EmptyListView.swift in Sources */,
 				BBB5CA252D0A2DEC002073B2 /* Groups+CoreDataClass.swift in Sources */,

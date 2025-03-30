@@ -12,7 +12,7 @@ protocol CharactersUseCase {
 }
 
 struct DefaultCharatersUseCase: CharactersUseCase {
-    private let repository = SNKDataRepository()
+    private let repository = CharactersDataRepository()
     
     func fetchDataCharacters(pages: Int) async -> AnyPublisher<Root, any Error> {
         return await self.repository.fetchAllCharactersDataService(pages: pages)
