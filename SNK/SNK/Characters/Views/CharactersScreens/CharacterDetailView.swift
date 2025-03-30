@@ -23,6 +23,9 @@ struct CharacterDetailView: View {
     
     var body: some View {
         VStack {
+            NavigationStack {
+                TopBarView(textHeader: self.character.name ?? "", hasMenu: false)
+            }
             ScrollView {
                 ImageView(isZoomed: $isZoomed,
                           imageData: self.character.img,
@@ -89,31 +92,6 @@ struct CharacterDetailView: View {
         }
         .background(LinearGradient(colors: [Color(.backgroundOne), Color(.backgroundTwo)], startPoint: .topLeading, endPoint: .bottomTrailing))
         .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    self.dismiss.callAsFunction()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                        .foregroundStyle(self.colorByColorScheme)
-                        .font(.title3)
-                }
-                .padding()
-                .accessibilityLabel(self.localization.accessibility_toolbar_back_btn)
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink {
-                    HomeView()
-                } label: {
-                    Image(systemName: "house.fill")
-                        .foregroundStyle(self.colorByColorScheme)
-                        .font(.title3)
-                }
-                .padding()
-                .accessibilityLabel(self.localization.accessibility_toolbar_home)
-            }
-        }
     }
 }
 
