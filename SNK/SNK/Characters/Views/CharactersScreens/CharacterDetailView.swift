@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.dismiss) private var dismiss
     @State private var isZoomed: Bool = false
     private var character: Characters
     private var characters: [Characters]
