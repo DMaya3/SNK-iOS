@@ -13,6 +13,7 @@
 		B8717B662D91E4AE004439E5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B8717B652D91E4AE004439E5 /* FirebaseAnalytics */; };
 		B8C7F12C2D98702200125273 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7F12B2D98702200125273 /* CharacterCellView.swift */; };
 		B8D852832D99CD7F00A5E3C8 /* EpisodesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */; };
+		B8D8528A2D99CFF900A5E3C8 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D852892D99CFF500A5E3C8 /* EpisodesViewModel.swift */; };
 		B8E21FDA2D972FAA00085939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E21FD92D972FAA00085939 /* AppDelegate.swift */; };
 		B8EB59AE2D97387B00E314F4 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */; };
 		B8EB59B52D97399E00E314F4 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */; };
@@ -29,7 +30,6 @@
 		BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */; };
 		BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */; };
 		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
-		BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
 		BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */; };
 		BBAD920F2CF0927A0040FC01 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BBAD920E2CF0927A0040FC01 /* Localizable.xcstrings */; };
@@ -96,6 +96,7 @@
 		B8BD87002D91F8C3004605D4 /* SNK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SNK.entitlements; sourceTree = "<group>"; };
 		B8C7F12B2D98702200125273 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesRepository.swift; sourceTree = "<group>"; };
+		B8D852892D99CFF500A5E3C8 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
 		B8E21FD92D972FAA00085939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKViewModel.swift; sourceTree = "<group>"; };
 		BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSectionView.swift; sourceTree = "<group>"; };
 		BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		BBAD920E2CF0927A0040FC01 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -238,6 +238,14 @@
 			path = Transformers;
 			sourceTree = "<group>";
 		};
+		B8D852882D99CFF100A5E3C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8D852892D99CFF500A5E3C8 /* EpisodesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +261,7 @@
 		B8EB59A82D97363600E314F4 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B8D852882D99CFF100A5E3C8 /* ViewModel */,
 				B8D852852D99CF6D00A5E3C8 /* CoreData */,
 				B8D852842D99CEEE00A5E3C8 /* UseCases */,
 				B8D852812D99CD6900A5E3C8 /* Repositories */,
@@ -382,14 +391,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BBA8B0F42CEF8C7C00F3F506 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				BBA8B0F52CEF8C8D00F3F506 /* SNKViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		BBA8B0F72CEFB2EF00F3F506 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,7 +479,6 @@
 				BBE6A9B42CEE7A130006E7CC /* Utils */,
 				BBE6A95C2CEE72680006E7CC /* Preview Content */,
 				BBA8B0F72CEFB2EF00F3F506 /* View */,
-				BBA8B0F42CEF8C7C00F3F506 /* ViewModel */,
 				BBE6A95D2CEE72680006E7CC /* Assets.xcassets */,
 				BBE6A95F2CEE72680006E7CC /* SNKApp.swift */,
 				B8717B632D91E484004439E5 /* GoogleService-Info.plist */,
@@ -694,7 +694,6 @@
 				BBE6A9A92CEE789F0006E7CC /* Groups+Transfomer.swift in Sources */,
 				BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */,
 				BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */,
-				BBA8B0F62CEF8C9000F3F506 /* SNKViewModel.swift in Sources */,
 				BBE6A9B62CEE7A1B0006E7CC /* Errors.swift in Sources */,
 				B8EB59AE2D97387B00E314F4 /* CharactersRepository.swift in Sources */,
 				BBE6A9A72CEE786E0006E7CC /* Episodes+Transformer.swift in Sources */,
@@ -711,6 +710,7 @@
 				BBAD92112CF095140040FC01 /* Localization.swift in Sources */,
 				BB0BBE392CF4B3F70014C968 /* FilterButtonView.swift in Sources */,
 				BBEB11422CF1CEF00048A65B /* CharactersListView.swift in Sources */,
+				B8D8528A2D99CFF900A5E3C8 /* EpisodesViewModel.swift in Sources */,
 				BBE6A99D2CEE77EB0006E7CC /* Information+CoreDataClass.swift in Sources */,
 				BBCA93F42CF31F4B004312F9 /* SectionImageCarouselView.swift in Sources */,
 				BBFBCCC72CF469C3004462D6 /* SettingsView.swift in Sources */,
