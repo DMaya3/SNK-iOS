@@ -14,6 +14,7 @@
 		B8C7F12C2D98702200125273 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C7F12B2D98702200125273 /* CharacterCellView.swift */; };
 		B8D852832D99CD7F00A5E3C8 /* EpisodesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */; };
 		B8D8528A2D99CFF900A5E3C8 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D852892D99CFF500A5E3C8 /* EpisodesViewModel.swift */; };
+		B8D8528F2D99D7EC00A5E3C8 /* EpisodeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D8528E2D99D7DC00A5E3C8 /* EpisodeCellView.swift */; };
 		B8E21FDA2D972FAA00085939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E21FD92D972FAA00085939 /* AppDelegate.swift */; };
 		B8EB59AE2D97387B00E314F4 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */; };
 		B8EB59B52D97399E00E314F4 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */; };
@@ -97,6 +98,7 @@
 		B8C7F12B2D98702200125273 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		B8D852822D99CD7C00A5E3C8 /* EpisodesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesRepository.swift; sourceTree = "<group>"; };
 		B8D852892D99CFF500A5E3C8 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
+		B8D8528E2D99D7DC00A5E3C8 /* EpisodeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellView.swift; sourceTree = "<group>"; };
 		B8E21FD92D972FAA00085939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EB59AD2D97387600E314F4 /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		B8EB59B42D97399A00E314F4 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
@@ -246,6 +248,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B8D8528B2D99D4C900A5E3C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8528D2D99D7D400A5E3C8 /* Components */,
+				BBB273122CF34AEE00DBFC21 /* EpisodesScreens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B8D8528D2D99D7D400A5E3C8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8528E2D99D7DC00A5E3C8 /* EpisodeCellView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B8EB59A72D97362F00E314F4 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +280,7 @@
 		B8EB59A82D97363600E314F4 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B8D8528B2D99D4C900A5E3C8 /* Views */,
 				B8D852882D99CFF100A5E3C8 /* ViewModel */,
 				B8D852852D99CF6D00A5E3C8 /* CoreData */,
 				B8D852842D99CEEE00A5E3C8 /* UseCases */,
@@ -422,7 +442,6 @@
 		BBA8B0FB2CEFB64600F3F506 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BBB273122CF34AEE00DBFC21 /* EpisodesScreens */,
 				BB0BBE342CF4986E0014C968 /* FilterView.swift */,
 				BBE6A95E2CEE72680006E7CC /* HomeView.swift */,
 				BBFBCCC62CF469BE004462D6 /* SettingsView.swift */,
@@ -718,6 +737,7 @@
 				BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */,
 				BBE6A99E2CEE77EB0006E7CC /* Information+CoreDataProperties.swift in Sources */,
 				BBE6A9B32CEE79280006E7CC /* CoreDataProvider.swift in Sources */,
+				B8D8528F2D99D7EC00A5E3C8 /* EpisodeCellView.swift in Sources */,
 				BB456ED32CF5D5FB00B0CCD4 /* TopBarView.swift in Sources */,
 				BBE6A9AF2CEE78F60006E7CC /* Information+Transformer.swift in Sources */,
 				BB0BBE352CF498710014C968 /* FilterView.swift in Sources */,

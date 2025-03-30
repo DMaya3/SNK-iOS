@@ -11,14 +11,13 @@ struct HomeView: View {
     @FetchRequest(entity: Characters.entity, sortDescriptors: [NSSortDescriptor(key: "id", ascending: true)]) public var characters: FetchedResults<Characters>
     @FetchRequest(entity: Episodes.entity, sortDescriptors: [NSSortDescriptor(key: "id", ascending: true)]) public var episodes: FetchedResults<Episodes>
     @Environment(\.colorScheme) private var colorScheme
-    @EnvironmentObject private var viewModel: SNKViewModel
     @Namespace private var nameSpace
     @State private var showWebView: Bool = false
     @State private var isMenuOpen: Bool = false
 
     var body: some View {
         NavigationStack {
-            if self.viewModel.isLoading {
+            if self.characters.isEmpty && self.episodes.isEmpty {
                 LoadingView()
             } else {
                 ZStack {
@@ -166,14 +165,6 @@ struct HomeView: View {
             }
         }
         
-    }
-}
-
-#Preview {
-    NavigationStack {
-        HomeView()
-            .environmentObject(SNKViewModel())
-            .environment(\.managedObjectContext, CoreDataProvider.preview.context)
     }
 }
 
