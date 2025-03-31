@@ -1,5 +1,5 @@
 //
-//  SNKRepositoryTest.swift
+//  CharactersRepositoryTest.swift
 //  SNK
 //
 //  Created by David Jesús Maya Quirós on 25/11/2024.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SNK
 
-final class SNKRepositoryTest: XCTestCase {
+final class CharactersRepositoryTest: XCTestCase {
     
     func testCallAPISuccess() throws {
         // Given
@@ -21,8 +21,8 @@ final class SNKRepositoryTest: XCTestCase {
                 print("Connection error: \(String(describing: error))")
                 return
             }
-        
-        // Then
+            
+            // Then
             do {
                 XCTAssertTrue(result.statusCode == 200)
             }
@@ -31,7 +31,7 @@ final class SNKRepositoryTest: XCTestCase {
     
     func testCallAPICharactersAndReturnCharactersSuccess() throws {
         // Given
-        let request = self.getRequest(for: "characters")
+        let request = self.getRequest()
         
         // When
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -40,7 +40,7 @@ final class SNKRepositoryTest: XCTestCase {
                 return
             }
             
-        // Then
+            // Then
             do {
                 let characters = try JSONDecoder().decode(Root.self, from: data)
                 XCTAssertNotNil(characters.results)
@@ -52,7 +52,7 @@ final class SNKRepositoryTest: XCTestCase {
     
     func testCallAPICharactersButNotReturnCharacters() throws {
         // Given
-        let request = self.getRequest(for: "characters")
+        let request = self.getRequest()
         
         // When
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -61,7 +61,7 @@ final class SNKRepositoryTest: XCTestCase {
                 return
             }
             
-        // Then
+            // Then
             do {
                 let characters = try JSONDecoder().decode(Root.self, from: data)
                 XCTAssertTrue(((characters.results?.isEmpty) != nil))
@@ -71,54 +71,11 @@ final class SNKRepositoryTest: XCTestCase {
             }
         }.resume()
     }
-    
-    func testCallAPIEpisodesAndReturnCEpisodesSuccess() throws {
-        // Given
-        let request = self.getRequest(for: "episodes")
-        
-        // When
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil, let _ = response as? HTTPURLResponse else {
-                XCTFail("Connection error: \(String(describing: error))")
-                return
-            }
-            
-        // Then
-            do {
-                let episodes = try JSONDecoder().decode(RootEpisodes.self, from: data)
-                XCTAssertNotNil(episodes.results)
-            } catch {
-                print("Error: \(error)")
-            }
-        }.resume()
-    }
-    
-    func testCallAPIEpisodesButNotReturnEpisodes() throws {
-        // Given
-        let request = self.getRequest(for: "episodes")
-        
-        // When
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data, error == nil, let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                XCTFail("Connection error: \(String(describing: error))")
-                return
-            }
-            
-        // Then
-            do {
-                let episodes = try JSONDecoder().decode(RootEpisodes.self, from: data)
-                XCTAssertTrue(((episodes.results?.isEmpty) != nil))
-            } catch {
-                print("Error: \(error)")
-                XCTAssertNotNil(data)
-            }
-        }.resume()
-    }
 }
 
-private extension SNKRepositoryTest {
-    func getRequest(for parameter: String = "") -> URLRequest {
-        let stringUrl = "https://api.attackontitanapi.com/\(parameter)"
+private extension CharactersRepositoryTest {
+    func getRequest() -> URLRequest {
+        let stringUrl = "https://api.attackontitanapi.com/characters"
         let url = URL(string: stringUrl)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
