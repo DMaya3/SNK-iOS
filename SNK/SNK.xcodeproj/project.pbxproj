@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B82319FB2D9ADEFA00CDE805 /* EpisodesVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82319FA2D9ADEF500CDE805 /* EpisodesVMTest.swift */; };
 		B8717B5F2D91DD79004439E5 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B8717B5E2D91DD79004439E5 /* FirebaseInAppMessaging-Beta */; };
 		B8717B612D91DD79004439E5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B8717B602D91DD79004439E5 /* FirebaseMessaging */; };
 		B8717B642D91E484004439E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8717B632D91E484004439E5 /* GoogleService-Info.plist */; };
@@ -25,11 +26,9 @@
 		BB3E06802CF3AC9B00332F81 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E067F2CF3AC9B00332F81 /* ButtonView.swift */; };
 		BB456ED32CF5D5FB00B0CCD4 /* TopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB456ED22CF5D5FB00B0CCD4 /* TopBarView.swift */; };
 		BB54228D2CF4DFF300D2D9C5 /* MockEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */; };
-		BB54228F2CF4E00900D2D9C5 /* MockRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */; };
-		BB5422912CF4E01700D2D9C5 /* MockInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422902CF4E01700D2D9C5 /* MockInformation.swift */; };
 		BB5422932CF4E02200D2D9C5 /* MockCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */; };
 		BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */; };
-		BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */; };
+		BB5422982CF4E04700D2D9C5 /* CharactersVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5422972CF4E04700D2D9C5 /* CharactersVMTest.swift */; };
 		BB7727342CF0CE8E00F64777 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7727332CF0CE8C00F64777 /* LoadingView.swift */; };
 		BBA8B0FD2CEFBCB500F3F506 /* CardSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */; };
 		BBA8B0FF2CEFC12100F3F506 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8B0FE2CEFC11F00F3F506 /* WebView.swift */; };
@@ -92,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B82319FA2D9ADEF500CDE805 /* EpisodesVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesVMTest.swift; sourceTree = "<group>"; };
 		B8717B622D91DFEA004439E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B8717B632D91E484004439E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8BD87002D91F8C3004605D4 /* SNK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SNK.entitlements; sourceTree = "<group>"; };
@@ -110,11 +110,9 @@
 		BB456ED22CF5D5FB00B0CCD4 /* TopBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarView.swift; sourceTree = "<group>"; };
 		BB54227F2CF4DFD200D2D9C5 /* SNKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SNKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodes.swift; sourceTree = "<group>"; };
-		BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoot.swift; sourceTree = "<group>"; };
-		BB5422902CF4E01700D2D9C5 /* MockInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockInformation.swift; sourceTree = "<group>"; };
 		BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacters.swift; sourceTree = "<group>"; };
 		BB5422952CF4E03700D2D9C5 /* SNKRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNKRepositoryTest.swift; sourceTree = "<group>"; };
-		BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		BB5422972CF4E04700D2D9C5 /* CharactersVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersVMTest.swift; sourceTree = "<group>"; };
 		BB7727332CF0CE8C00F64777 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BBA53FAE2CEE5C26005172E9 /* SNK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA8B0FC2CEFBCB400F3F506 /* CardSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSectionView.swift; sourceTree = "<group>"; };
@@ -188,6 +186,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B82319F52D9ADCBF00CDE805 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				B82319F72D9ADCD500CDE805 /* MockData */,
+				BB5422942CF4E02A00D2D9C5 /* UnitTest */,
+				BB5422992CF4F54F00D2D9C5 /* IntegrationTest */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		B82319F62D9ADCC600CDE805 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				B82319F92D9ADECA00CDE805 /* UnitTest */,
+				B82319F82D9ADEBE00CDE805 /* MockData */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		B82319F72D9ADCD500CDE805 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		B82319F82D9ADEBE00CDE805 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		B82319F92D9ADECA00CDE805 /* UnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				B82319FA2D9ADEF500CDE805 /* EpisodesVMTest.swift */,
+			);
+			path = UnitTest;
+			sourceTree = "<group>";
+		};
 		B8C7F12D2D98712500125273 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,28 +400,16 @@
 		BB5422892CF4DFDC00D2D9C5 /* SNKTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB5422992CF4F54F00D2D9C5 /* IntegrationTest */,
-				BB5422942CF4E02A00D2D9C5 /* UnitTest */,
-				BB54228B2CF4DFE300D2D9C5 /* MockData */,
+				B82319F62D9ADCC600CDE805 /* Episodes */,
+				B82319F52D9ADCBF00CDE805 /* Characters */,
 			);
 			path = SNKTests;
-			sourceTree = "<group>";
-		};
-		BB54228B2CF4DFE300D2D9C5 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				BB5422922CF4E02200D2D9C5 /* MockCharacters.swift */,
-				BB5422902CF4E01700D2D9C5 /* MockInformation.swift */,
-				BB54228E2CF4E00900D2D9C5 /* MockRoot.swift */,
-				BB54228C2CF4DFF300D2D9C5 /* MockEpisodes.swift */,
-			);
-			path = MockData;
 			sourceTree = "<group>";
 		};
 		BB5422942CF4E02A00D2D9C5 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
-				BB5422972CF4E04700D2D9C5 /* ViewModelTests.swift */,
+				BB5422972CF4E04700D2D9C5 /* CharactersVMTest.swift */,
 			);
 			path = UnitTest;
 			sourceTree = "<group>";
@@ -686,10 +715,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB5422962CF4E03700D2D9C5 /* SNKRepositoryTest.swift in Sources */,
+				B82319FB2D9ADEFA00CDE805 /* EpisodesVMTest.swift in Sources */,
 				BB5422932CF4E02200D2D9C5 /* MockCharacters.swift in Sources */,
-				BB5422912CF4E01700D2D9C5 /* MockInformation.swift in Sources */,
-				BB54228F2CF4E00900D2D9C5 /* MockRoot.swift in Sources */,
-				BB5422982CF4E04700D2D9C5 /* ViewModelTests.swift in Sources */,
+				BB5422982CF4E04700D2D9C5 /* CharactersVMTest.swift in Sources */,
 				BB54228D2CF4DFF300D2D9C5 /* MockEpisodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

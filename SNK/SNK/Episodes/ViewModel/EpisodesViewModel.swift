@@ -69,7 +69,7 @@ private extension EpisodesViewModel {
 }
 
 // MARK: - Helpers
-private extension EpisodesViewModel {
+extension EpisodesViewModel {
     func fillEpisodes(episode: Episodes) {
         do {
             let newEpisode = try self.coreDataProvider.saveEpisodeEntity(episode: episode)
