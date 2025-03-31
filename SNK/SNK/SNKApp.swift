@@ -18,14 +18,16 @@ struct SNKApp: App {
         ValueTransformer.setValueTransformer(StringArrayTransformer(), forName: NSValueTransformerName("StringArrayTransformer"))
     }
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject private var viewModel = SNKViewModel()
+    @StateObject private var episodesVM = EpisodesViewModel()
+    @StateObject private var charactersVM = CharactersViewModel()
     @StateObject private var colorSchemeManager = ColorSchemeManager()
     @StateObject private var languageSettings = LanguageSettings()
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environment(\.managedObjectContext, CoreDataProvider.preview.context)
-                .environmentObject(self.viewModel)
+                .environmentObject(self.episodesVM)
+                .environmentObject(self.charactersVM)
                 .environmentObject(self.languageSettings)
                 .environmentObject(self.colorSchemeManager)
                 .preferredColorScheme(self.colorSchemeManager.isDarkMode ? .dark : .light)
